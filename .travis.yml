@@ -1,4 +1,19 @@
-language: java
-jdk: 
-- oraclejdk8
-dist: trusty
+matrix:
+  include:
+    - language: java
+      dist: trusty
+      jdk: oraclejdk8
+      before_script:
+        - cd Spring-Boot-MockupToHtml/
+      script:
+        - ./mvn install -DskipTests=True
+
+    - language: node_js
+      node_js:
+        - "9"
+      dist: trusty
+      sudo: required
+      before_script:
+        - cd Angular-mockupToHtml/
+      script: 
+        - npm install -g @angular/cli
