@@ -8,7 +8,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class IndexContentComponent implements OnInit {
 
-  title = 'appBootstrap';
+  title = 'RegistrationConnexion';
   
   closeResult: string;
   

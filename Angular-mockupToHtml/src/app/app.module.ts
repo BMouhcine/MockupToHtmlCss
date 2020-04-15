@@ -7,12 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { IndexContentComponent } from './Components/index-content/index-content.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { ProjectsComponent } from './Pages/projects/projects.component';
+import { HelpComponent } from './Pages/help/help.component';
+import { AboutComponent } from './Pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    IndexContentComponent
+    IndexContentComponent,
+    HomeComponent,
+    ProjectsComponent,
+    HelpComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
