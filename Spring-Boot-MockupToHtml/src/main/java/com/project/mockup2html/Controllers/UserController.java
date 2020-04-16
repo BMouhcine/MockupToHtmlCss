@@ -19,15 +19,15 @@ import com.project.mockup2html.Models.User;
 
 
 @RestController
+
 @RequestMapping("/")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins="http://localhost:4200")
 public class UserController {
 	public static long currentUserId=-1;
 	private final Logger log = LoggerFactory.getLogger(UserController.class);
 	@Autowired
     private UserDao userDao;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
 	
 	public UserController(UserDao userDao, BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.userDao = userDao;
@@ -65,8 +65,10 @@ public class UserController {
     }
 	
 	// USER CREDS CHECKER
-	 @PostMapping("/login")
+	
+     	@PostMapping("/login")
 	    ResponseEntity<User> checkUser(@Valid @RequestBody User user) {
+     		System.out.println("mhzg");
 	        User userFound = userDao.findByUsername(user.getUsername());
 	        if(userFound!=null) {
 		        if(bCryptPasswordEncoder.matches(user.getPassword(), userFound.getPassword())) {
