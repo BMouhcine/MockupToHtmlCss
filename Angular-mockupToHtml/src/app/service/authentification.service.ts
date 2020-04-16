@@ -11,19 +11,16 @@ export class User {
   providedIn: 'root'
 })
 export class AuthenticationService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 // Provide username and password for authentication, and once authentication is successful, 
 //store JWT token in session
   authenticate(username, password) {
-    return this.httpClient
-      .post<any>("http://localhost:8080/login", { username, password })
+    return this.http
+      .post<any>("http://localhost:8080/login", { username, password },{observe: 'response'})
       .pipe(
-        map((data:any) => {
-          sessionStorage.setItem("username", username);
-          console.log(data)
-          let tokenStr = "Bearer " + data.token;
-          sessionStorage.setItem("token", tokenStr);
-          return data;
+        map((res:any) => {
+          console.log(res.headers.get('Authorization'))
+          return res;
         })
       );
   }
