@@ -17,39 +17,20 @@
             <div class="col-6">
                 <div class="text-center">
                     <!-- Button HTML (to Trigger Modal) -->
-                    <button class="btn btn-primary" (click)="open(mymodal)">Sign up</button>
+                    <button class="btn btn-primary" >Sign up</button>
                 </div>
                 <p class="text-center mt-2">Please register if you dont have an account yet !</p>
             </div>
             <div class="col-6">
                 <div class="text-center">
                     <!-- Button HTML (to Trigger Modal) -->
-                    <button class="btn btn btn-success" (click)="open(mymodal1)">Sign In</button>
+                    <button class="btn btn btn-success" >Sign In</button>
                 </div>
                 <p class="text-center mt-2">Sign in and try our Technology</p>
             </div>
         </div>
     </div>
-    <!--Sign UP-->
-    <ng-template #mymodal let-modal>
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Sig Up</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <app-registration></app-registration>
-      </ng-template>
-      <!--Sign IN-->
-      <ng-template #mymodal1 let-modal>
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Sign In</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-          <app-login></app-login>
-      </ng-template>
+   
    
 
 </div>

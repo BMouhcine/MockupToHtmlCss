@@ -16,9 +16,12 @@ import { ProjectsComponent } from './Pages/projects/projects.component';
 import { HelpComponent } from './Pages/help/help.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { LoginComponent } from './Components/login/login.component';
+
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { BasicAuthHtppInterceptorService } from './service/basic-auth-interceptor.service';
 import { Builder } from 'protractor';
+import { LoginPageComponent } from './Pages/login-page/login-page.component';
+import { RegistrationPageComponent } from './Pages/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { Builder } from 'protractor';
     AboutComponent,
     LoginComponent,
     RegistrationComponent,
+    LoginPageComponent,
+    RegistrationPageComponent,
+
 
   ],
   imports: [

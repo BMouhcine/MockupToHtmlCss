@@ -19,7 +19,7 @@ export class AuthenticationService {
       .post<any>("http://localhost:8080/login", { username, password },{observe: 'response'})
       .pipe(
         map((res:any) => {
-          console.log(res.headers.get('Authorization'))
+          console.log(res)
           return res;
         })
       );
@@ -34,5 +34,19 @@ export class AuthenticationService {
   logOut() {
     sessionStorage.removeItem("username");
   }
+  // Provide username and email and password and repassword for registration, and once authentication is successful, 
+//store JWT token in session
+registration(username, email ,password,repassword) {
+  return this.http
+    .post<any>("http://localhost:8080/createUser", { username,email,password,repassword },{observe: 'response'})
+    .pipe(
+      map((res:any) => {
+        console.log(res)
+        return res;
+      })
+    );
+}
+
+
 }
 
