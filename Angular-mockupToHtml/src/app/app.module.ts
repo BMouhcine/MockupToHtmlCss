@@ -19,9 +19,9 @@ import { LoginComponent } from './Components/login/login.component';
 
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { BasicAuthHtppInterceptorService } from './service/basic-auth-interceptor.service';
-import { Builder } from 'protractor';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegistrationPageComponent } from './Pages/registration-page/registration-page.component';
+import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { RegistrationPageComponent } from './Pages/registration-page/registratio
     RegistrationComponent,
     LoginPageComponent,
     RegistrationPageComponent,
+    AcceuilComponent,
 
 
   ],

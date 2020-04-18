@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
       data => {
         //the help routing is just to test
         console.log(true);
-        this.router.navigate(['help'])
+        this.router.navigate(['login'])
         this.isRegistred = false
       },
       error => {

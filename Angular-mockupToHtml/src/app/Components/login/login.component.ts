@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
         //the help routing is just to test
-        this.router.navigate(['help'])
+        this.router.navigate(['acceuil'])
         this.invalidLogin = false
       },
       error => {
