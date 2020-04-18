@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: '', component: HomeComponent },  
     { path: 'about', component: AboutComponent },  
     { path: 'help', component: HelpComponent },
-    { path: ':id/Projects', component: ProjectsComponent },
+    { path: 'projects', component: ProjectsComponent },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
     

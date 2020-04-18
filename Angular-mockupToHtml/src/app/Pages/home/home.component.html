@@ -1,5 +1,28 @@
 <div>
     <app-navbar></app-navbar>
-    <app-index-content></app-index-content>
+
+    <div class="row WelcomeText">
+        <app-index-content></app-index-content>
+    </div>
+    <div class="row LoginRegistration">
+        
+                <div class="col-6">
+                    <div class="text-center">
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <button class="btn btn-primary" [routerLink]="['/registration']" >Sign up</button>
+                    </div>
+                    <p class="text-center mt-2">Please register if you dont have an account yet !</p>
+                </div>
+                <div class="col-6">
+                    <div class="text-center">
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <button class="btn btn btn-success" [routerLink]="['/login']" >Sign In</button>
+                    </div>
+                    <p class="text-center mt-2">Sign in and try our Technology</p>
+                </div>
+         
+    </div>
+    
+    
 
 <div>
