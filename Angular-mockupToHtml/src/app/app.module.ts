@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsModule } from '@angular/forms';
 
@@ -22,6 +23,9 @@ import { BasicAuthHtppInterceptorService } from './service/basic-auth-intercepto
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegistrationPageComponent } from './Pages/registration-page/registration-page.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
+import { ProgressComponent } from './Component/progress/progress.component';
+import { DndDirective } from './directives/dnd.directive';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
     LoginPageComponent,
     RegistrationPageComponent,
     AcceuilComponent,
+    ProgressComponent,
+    DndDirective,
+   
 
 
   ],
@@ -46,6 +53,7 @@ import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
     AppRoutingModule,
     Ng2PageScrollModule,
     NgbModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule
   ],

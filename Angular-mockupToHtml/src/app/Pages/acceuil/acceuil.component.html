@@ -1,21 +1,36 @@
-<div>
+<div >
     <app-navbar-app></app-navbar-app>
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-100">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>File Upload</h5>
-                    </div>
-                    <div class="card-block">
-                        <form action="#" class="dropzone dz-clickable">
-                            <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
-                        </form>
-                        <div class="text-center m-t-20">
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </div>
+    <form action="" method="post">  
+    <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+        <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+        <img src="../../../assets/ic-upload-file.svg" alt="">
+        <h3>Drag and drop your image here</h3>
+        <h3>or</h3>
+        <label for="fileDropRef">Browse for file</label>
+      </div>
+      <div class="files-list">
+        <div class="single-file" *ngFor="let file of files; let i = index">
+          <div class="container-fluid">
+            <div class="info ">
+              <img src="../../../assets/ic-file.svg" width="45px" alt="file">
+              <h4 class="name">
+                {{ file?.name }}
+              </h4>
+              <p class="size">
+                {{ formatBytes(file?.size,file?.lenght) }}
+              </p>
+              <app-progress [progress]="file?.progress"></app-progress>
             </div>
+            <div class="row float-right">
+            <img src="../../../assets/ic-delete-file.svg" class="delete  mb-2 mr-2 mt-2" width="20px" alt="file" (click)="deleteFile(i)">
+            <input type="submit" class="btn btn-primary mr-3 mt-2" (click)="sendimage()"  value="upload">
+            </div>
+          </div>
+          
         </div>
+    
+      </div>
+      
+  </form>
+    
 </div>
