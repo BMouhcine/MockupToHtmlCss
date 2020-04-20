@@ -16,7 +16,7 @@ public class HomeController {
 	
 	// Register Handler
 		@GetMapping("/Portal")
-	    ResponseEntity<String> createUser() {
+	    ResponseEntity<String> portalHandler() {
 	        return ResponseEntity.ok().body("rak f portal");
 	    }
 	
