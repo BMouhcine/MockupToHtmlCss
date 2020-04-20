@@ -1,10 +1,16 @@
 package com.project.mockup2html.Models;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
@@ -20,6 +26,9 @@ public class User {
 	private String password;
 	@Column 
 	private boolean enabled;
+	@JsonManagedReference
+	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER)
+	private Set<ImageUI> imgs;
 	
 	public Long getId_user() {
 		return id_user;
@@ -35,6 +44,13 @@ public class User {
 	}
 	public String getEmail() {
 		return email;
+	}
+	
+	public Set<ImageUI> getImgs() {
+		return imgs;
+	}
+	public void setImgs(Set<ImageUI> imgs) {
+		this.imgs = imgs;
 	}
 	public void setEmail(String email) {
 		this.email = email;
