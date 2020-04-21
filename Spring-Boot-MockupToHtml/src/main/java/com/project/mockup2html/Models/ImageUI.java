@@ -12,9 +12,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 public class ImageUI {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_img;
-	@Column
-	private Long id_user;
+	private Long id;
 	@Column
 	private byte[] img;
 	@JsonBackReference
@@ -22,17 +20,12 @@ public class ImageUI {
 	@JoinColumn(name="id_user", nullable = false)
 	private User user;
 	public Long getId_img() {
-		return id_img;
+		return id;
 	}
 	public void setId_img(Long id_img) {
-		this.id_img = id_img;
+		this.id = id_img;
 	}
-	public Long getId_user() {
-		return id_user;
-	}
-	public void setId_user(Long id_user) {
-		this.id_user = id_user;
-	}
+	
 	public byte[] getImg() {
 		return img;
 	}
