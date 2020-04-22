@@ -19,6 +19,13 @@ public class ImageUI {
 	@ManyToOne
 	@JoinColumn(name="id_user", nullable = false)
 	private User user;
+	
+	
+	public ImageUI(byte[] img, User user) {
+		super();
+		this.img = img;
+		this.user = user;
+	}
 	public Long getId_img() {
 		return id;
 	}

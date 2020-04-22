@@ -22,7 +22,7 @@ public class ImageUIDaoImpl implements ImageUIDao {
 	}
 
 	@Override
-	public ImageUI findByUser(User user) {
+	public Collection<ImageUI> findByUser(User user) {
 		return imageUIRepository.findByUser(user);
 	}
 

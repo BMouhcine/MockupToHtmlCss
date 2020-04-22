@@ -13,7 +13,7 @@ import com.project.mockup2html.Models.User;
 @Service
 public interface ImageUIDao {
 	ImageUI findById(Long img_id);
-	ImageUI findByUser(User user);
+	Collection<ImageUI> findByUser(User user);
 	Collection<ImageUI> findAll();
 	ImageUI save(@Valid ImageUI imageUI);
 

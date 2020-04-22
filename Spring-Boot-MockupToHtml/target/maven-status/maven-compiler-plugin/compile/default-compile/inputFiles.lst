@@ -11,6 +11,7 @@
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/WebSecurity.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/Models/ImageUI.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/UserDetailsServiceImpl.java
+/Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/Tests/HomeControllerTesting.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/Controllers/UserController.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/Dao/ImageUIDao.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/DemoApplication.java

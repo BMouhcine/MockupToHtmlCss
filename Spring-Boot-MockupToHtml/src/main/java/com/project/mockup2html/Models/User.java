@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -30,6 +31,12 @@ public class User {
 	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER)
 	private Set<ImageUI> imgs;
 	
+	
+	public User(String username, String password,String email) {
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
 	public Long getId_user() {
 		return id_user;
 	}

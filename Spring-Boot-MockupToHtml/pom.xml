@@ -19,13 +19,59 @@
 	</properties>
 
 	<dependencies>	
+            
+            <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>4.3.10.RELEASE</version>
+    <scope>test</scope>
+</dependency>
 
-	<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>6.0.0.Alpha4</version>
+<dependency>
+    <groupId>org.glassfish.main.extras</groupId>
+    <artifactId>glassfish-embedded-all</artifactId>
+    <version>4.1.2</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.arquillian.junit</groupId>
+    <artifactId>arquillian-junit-container</artifactId>
+    <version>1.6.0.Final</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.jboss.arquillian.container</groupId>
+    <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+    <version>1.0.0.Final</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.arquillian</groupId>
+    <artifactId>arquillian-bom</artifactId>
+    <version>1.6.0.Final</version>
     <type>pom</type>
 </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-test</artifactId>
+            </dependency>
+            <dependency>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-test-autoconfigure</artifactId>
+			    
+			</dependency>
+
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-test</artifactId>
+			    <scope>test</scope>
+			</dependency>
+			
+            
+            
 
 	<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -42,7 +88,8 @@
     <groupId>com.auth0</groupId>
     <artifactId>java-jwt</artifactId>
     <version>3.9.0</version>
-</dependency><dependency>
+</dependency>
+<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -54,10 +101,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-client</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -68,17 +111,6 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 
