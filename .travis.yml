@@ -7,7 +7,7 @@ matrix:
       before_script:
         - cd Spring-Boot-MockupToHtml/
       script:
-        - mvn install
+        - mvn install -DskipTests
 
     - language: node_js
       node_js:
