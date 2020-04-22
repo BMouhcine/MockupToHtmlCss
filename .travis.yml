@@ -3,7 +3,7 @@ matrix:
     - language: java
       dist: trusty
       install: true
-      jdk: openjdk9
+      jdk: openjdk8
       before_script:
         - cd Spring-Boot-MockupToHtml/
       script:
