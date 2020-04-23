@@ -25,6 +25,7 @@ import { RegistrationPageComponent } from './Pages/registration-page/registratio
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 import { ProgressComponent } from './Component/progress/progress.component';
 import { DndDirective } from './directives/dnd.directive';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -44,8 +45,7 @@ import { DndDirective } from './directives/dnd.directive';
     AcceuilComponent,
     ProgressComponent,
     DndDirective,
-   
-
+  
 
   ],
   imports: [
@@ -55,7 +55,8 @@ import { DndDirective } from './directives/dnd.directive';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
