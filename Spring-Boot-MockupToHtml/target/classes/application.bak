@@ -9,4 +9,4 @@ spring.profiles.active=development
 
 jdbc:mysql://remotemysql.com:3306/mqSieepAKN
 mqSieepAKN
-5RTVJ40s9Q
+mqSieepAKN
