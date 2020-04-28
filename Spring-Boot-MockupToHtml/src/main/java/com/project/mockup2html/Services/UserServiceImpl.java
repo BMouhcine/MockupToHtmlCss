@@ -19,8 +19,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	UserRepository userRepository;
-	@Autowired
-	SessionFactory sessionFactory;
+	
 	
 	@Override
 	public User findByUsername(String username) {
