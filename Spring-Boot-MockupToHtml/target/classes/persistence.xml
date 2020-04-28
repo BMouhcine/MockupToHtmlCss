@@ -1,6 +1,6 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
 <persistence-unit name="defaultPersistenceUnit" transaction-type="JTA">
-    <class>com.baeldung.arquillian.Car</class>
+    <class>com.project.mockup2html.Models.User</class>
     <properties>
         <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
         <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb"/>

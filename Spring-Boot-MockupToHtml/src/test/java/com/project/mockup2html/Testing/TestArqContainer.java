@@ -2,12 +2,8 @@ package com.project.mockup2html.Testing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.inject.Inject;
-
-import org.hibernate.SessionFactory;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -17,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.project.mockup2html.Models.User;
 import com.project.mockup2html.Repositories.UserRepository;
+
 
 @RunWith(Arquillian.class)
 public class TestArqContainer {
