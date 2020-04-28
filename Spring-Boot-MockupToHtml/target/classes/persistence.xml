@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
 <persistence-unit name="defaultPersistenceUnit" transaction-type="JTA">
-    <class>com.project.mockup2html.Models.User</class>
+    <class>com.baeldung.arquillian.Car</class>
     <properties>
-        <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/m2c"/>
-        <property name="javax.persistence.jdbc.user" value="root"/>
-        <property name="javax.persistence.jdbc.password" value="password"/>
+        <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb"/>
+        <property name="javax.persistence.jdbc.user" value="sa"/>
+        <property name="javax.persistence.jdbc.password" value=""/>
         <property name="eclipselink.ddl-generation" value="create-tables"/>
         <property name="hibernate.hbm2ddl.auto" value="update" />
     </properties>

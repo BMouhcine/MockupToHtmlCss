@@ -3,7 +3,6 @@
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/JWTAuthenticationFilter.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/DevCorsConfiguration.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/SecurityConstants.java
-/Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/PersistenceConfig.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/JWTAuthorizationFilter.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/Services/ImageService.java
 /Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml/src/main/java/com/project/mockup2html/Services/UserService.java

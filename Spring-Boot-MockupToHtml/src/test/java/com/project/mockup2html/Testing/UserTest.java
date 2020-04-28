@@ -15,8 +15,7 @@ public class UserTest {
 	  UserRepository userRepository;
 	  
 	  public User createUser(User user) { return userRepository.save(user); }
-	  public List<User> findAll() { return userRepository.findAll(); } public void
-	  deleteUser(User user) { userRepository.delete(user); }
-	 
-	
+	  public List<User> findAll() { return userRepository.findAll(); } 
+	  public void deleteUser(User user) { userRepository.delete(user); }
+	  
 }

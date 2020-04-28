@@ -29,10 +29,7 @@ public class UserController {
     private UserService userDao;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	public UserController(UserService userDao, BCryptPasswordEncoder bCryptPasswordEncoder) {
-		this.userDao = userDao;
-		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-	}
+	
 	
 	
 	

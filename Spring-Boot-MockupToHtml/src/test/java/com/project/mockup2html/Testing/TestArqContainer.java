@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import javax.annotation.PreDestroy;
+import javax.ejb.EJB;
 import javax.inject.Inject;
 
 import org.hibernate.SessionFactory;
@@ -15,10 +16,12 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.project.mockup2html.Models.User;
+import com.project.mockup2html.Repositories.UserRepository;
 
 @RunWith(Arquillian.class)
 public class TestArqContainer {
-	
+	@EJB
+	UserRepository userRepository;
 	
 	@Deployment
 	public static JavaArchive createDeployment() {
@@ -49,9 +52,5 @@ public class TestArqContainer {
 		 
 		
 	}
-	
-	@PreDestroy
-	public void desctruct() {
-		
-	}
+
 }

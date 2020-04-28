@@ -15,6 +15,6 @@ public interface UserService {
 	User findByEmail(String email);
 	List<User> findAll();
 	User save(@Valid User user);
-	User update(@Valid User user);
+	
 
 }
