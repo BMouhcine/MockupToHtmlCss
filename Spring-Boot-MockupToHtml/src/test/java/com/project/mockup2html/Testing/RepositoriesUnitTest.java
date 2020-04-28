@@ -27,7 +27,7 @@ public class RepositoriesUnitTest {
 	@Test
 	public void whenFindByCriteria() {
 	 
-		// Initializing given data for testing
+	    // Initializing given data for testing
 	    User test = new User("user_test","usr","usr@usr.dom");
 	    ImageUI testImage = new ImageUI("This is a text for testing".getBytes(), test);
 	    
@@ -60,7 +60,7 @@ public class RepositoriesUnitTest {
 	    assertThat(foundByUsername.getUsername(), equalTo(test.getUsername()));
 	    
 	    
-		// then check that the foundByEmail User object is valid.
+	    // then check that the foundByEmail User object is valid.
 		assertThat(foundByEmail.getEmail(), equalTo(test.getEmail()));
 		
 
