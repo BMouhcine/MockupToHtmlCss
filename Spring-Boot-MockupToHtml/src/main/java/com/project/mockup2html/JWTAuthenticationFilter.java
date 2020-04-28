@@ -2,7 +2,7 @@ package com.project.mockup2html;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.mockup2html.Controllers.UserController;
-import com.project.mockup2html.Dao.UserDao;
+import com.project.mockup2html.Services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,8 +24,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
     @Autowired
-    private UserDao userDao;
-    public JWTAuthenticationFilter(AuthenticationManager authenticationManager,UserDao userDao) {
+    private UserService userDao;
+    public JWTAuthenticationFilter(AuthenticationManager authenticationManager,UserService userDao) {
         this.authenticationManager = authenticationManager;
         this.userDao = userDao;
 

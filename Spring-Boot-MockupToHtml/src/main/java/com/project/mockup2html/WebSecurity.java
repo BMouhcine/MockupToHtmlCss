@@ -23,8 +23,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter implements Applica
     private UserDetailsService userDetailsService;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
-    private com.project.mockup2html.Dao.UserDao userDao;
-    public WebSecurity(UserDetailsService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder,com.project.mockup2html.Dao.UserDao userDao) {
+    private com.project.mockup2html.Services.UserService userDao;
+    public WebSecurity(UserDetailsService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder,com.project.mockup2html.Services.UserService userDao) {
         this.userDetailsService = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }

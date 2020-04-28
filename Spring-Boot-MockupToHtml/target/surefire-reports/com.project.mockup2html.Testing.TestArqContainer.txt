@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.project.mockup2html.Testing.TestArqContainer
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 8.683 s <<< FAILURE! - in com.project.mockup2html.Testing.TestArqContainer
+testUser(com.project.mockup2html.Testing.TestArqContainer)  Time elapsed: 0.428 s  <<< ERROR!
+javax.ejb.EJBException
+	at com.project.mockup2html.Testing.TestArqContainer.testUser(TestArqContainer.java:36)
+Caused by: java.lang.NullPointerException
+	at com.project.mockup2html.Testing.TestArqContainer.testUser(TestArqContainer.java:36)
+

@@ -10,9 +10,9 @@ import static java.util.Collections.emptyList;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private com.project.mockup2html.Dao.UserDaoImpl userRepository;
+    private com.project.mockup2html.Services.UserServiceImpl userRepository;
 
-    public UserDetailsServiceImpl(com.project.mockup2html.Dao.UserDaoImpl applicationUserRepository) {
+    public UserDetailsServiceImpl(com.project.mockup2html.Services.UserServiceImpl applicationUserRepository) {
         this.userRepository = applicationUserRepository;
     }
 

@@ -1,5 +1,6 @@
 package com.project.mockup2html.Testing;
 
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 import java.util.Collection;
@@ -8,11 +9,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import com.project.mockup2html.Models.ImageUI;
-import com.project.mockup2html.Models.ImageUIRepository;
 import com.project.mockup2html.Models.User;
-import com.project.mockup2html.Models.UserRepository;
+import com.project.mockup2html.Repositories.ImageUIRepository;
+import com.project.mockup2html.Repositories.UserRepository;
 
 
 @RunWith(SpringRunner.class)
@@ -22,6 +22,7 @@ public class RepositoriesUnitTest {
 	private UserRepository userRepository;
 	@Autowired
 	private ImageUIRepository imageUIRepository;
+	
 
 	@Test
 	public void whenFindByCriteria() {
@@ -31,8 +32,11 @@ public class RepositoriesUnitTest {
 	    ImageUI testImage = new ImageUI("This is a text for testing".getBytes(), test);
 	    
 	    // Persisting data into Database.
+	    
+
 	    userRepository.save(test);
 	    imageUIRepository.save(testImage);
+
 	    
 	    
 	    // when finding User object via findByUsername happens.

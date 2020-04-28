@@ -21,6 +21,9 @@ public class ImageUI {
 	private User user;
 	
 	
+	public ImageUI() {
+		// TODO Auto-generated constructor stub
+	}
 	public ImageUI(byte[] img, User user) {
 		super();
 		this.img = img;

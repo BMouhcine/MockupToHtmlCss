@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id_user;
 	@Column
 	private String username;
@@ -32,10 +32,20 @@ public class User {
 	private Set<ImageUI> imgs;
 	
 	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	public User(String username, String password,String email) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+	}
+	public User(long id,String username, String password,String email,boolean enabled) {
+		this.id_user = id;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.enabled=enabled;
 	}
 	public Long getId_user() {
 		return id_user;

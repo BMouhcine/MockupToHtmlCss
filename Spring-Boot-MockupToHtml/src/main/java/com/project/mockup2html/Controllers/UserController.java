@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.project.mockup2html.Dao.UserDao;
+
 import com.project.mockup2html.Models.User;
+import com.project.mockup2html.Services.UserService;
 
 
 @RestController
@@ -25,10 +26,10 @@ public class UserController {
 	public static long currentUserId=-1;
 	private final Logger log = LoggerFactory.getLogger(UserController.class);
 	@Autowired
-    private UserDao userDao;
+    private UserService userDao;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	public UserController(UserDao userDao, BCryptPasswordEncoder bCryptPasswordEncoder) {
+	public UserController(UserService userDao, BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.userDao = userDao;
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
