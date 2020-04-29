@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~9.1.1",
     "@angular/router": "~9.1.1",
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
+    "@tensorflow/tfjs": "^1.7.4",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "ng2-page-scroll": "^4.0.0-beta.12",
@@ -28,6 +29,7 @@
     "primeicons": "^2.0.0",
     "primeng": "^9.0.6",
     "rxjs": "~6.5.4",
+    "save": "^2.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
