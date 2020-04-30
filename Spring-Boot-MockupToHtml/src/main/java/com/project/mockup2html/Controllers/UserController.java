@@ -65,13 +65,13 @@ public class UserController {
 	// USER CREDS CHECKER
 	
      	@PostMapping("/login")
-	    ResponseEntity<User> checkUser(@Valid @RequestBody User user) {
+	    ResponseEntity<String> checkUser(@RequestBody User user) {
      		System.out.println("mhzg");
 	        User userFound = userDao.findByUsername(user.getUsername());
 	        if(userFound!=null) {
 		        if(bCryptPasswordEncoder.matches(user.getPassword(), userFound.getPassword())) {
 		        	currentUserId = userFound.getId_user();
-		        	return ResponseEntity.ok().body(userFound);
+		        	return ResponseEntity.ok().body("hElOOOOOOOOOO");
 		        }
 	        }
 	        return ResponseEntity.ok().body(null);
