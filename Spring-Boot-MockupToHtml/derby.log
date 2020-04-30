@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Apr 30 02:18:34 WET 2020:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) : instance a816c00e-0171-c8a9-f872-000007524508 
+dans le répertoire de base de données /private/var/folders/04/bs_tbys545q87b5z7hj1d5w00000gn/T/gfembed6975511517172010975tmp/lib/databases/embedded_default avec le chargeur de classe sun.misc.Launcher$AppClassLoader@28d93b30
+Chargé de file:/Users/mac/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1.2/glassfish-embedded-all-4.1.2.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_201-b09
+user.dir=/Users/mac/GitHub/MockupToHtmlCss/Spring-Boot-MockupToHtml
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.15.4
+derby.system.home=null
+Chargeur de classe de la base de données démarré - derby.database.classpath = ''

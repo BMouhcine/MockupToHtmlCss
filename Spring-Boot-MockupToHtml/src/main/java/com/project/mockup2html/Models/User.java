@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
-@Entity
+@Entity(name ="UTILISATEUR")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class User {
 	private String email;
 	@Column
 	private String password;
-	@Column 
+	@Column
 	private boolean enabled;
 	@JsonManagedReference
 	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER)
@@ -40,8 +40,7 @@ public class User {
 		this.password = password;
 		this.email = email;
 	}
-	public User(long id,String username, String password,String email,boolean enabled) {
-		this.id_user = id;
+	public User(String email,boolean enabled, String password,String username) {
 		this.username = username;
 		this.password = password;
 		this.email = email;

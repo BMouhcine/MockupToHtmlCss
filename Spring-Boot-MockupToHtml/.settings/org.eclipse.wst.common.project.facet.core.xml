@@ -3,4 +3,5 @@
   <installed facet="java" version="1.8"/>
   <installed facet="jst.utility" version="1.0"/>
   <installed facet="jpt.jpa" version="1.0"/>
+  <installed facet="jst.cdi" version="2.0"/>
 </faceted-project>

@@ -1,21 +1,23 @@
 package com.project.mockup2html.Testing;
 
 import java.util.List;
-
 import javax.ejb.Stateless;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import com.project.mockup2html.Models.User;
-import com.project.mockup2html.Repositories.UserRepository;
 @Stateless
 public class UserTest {
 	
-	  @Autowired
-	  UserRepository userRepository;
+	  @PersistenceContext(unitName = "defaultPersistenceUnit")
+	  EntityManager em;
 	  
-	  public User createUser(User user) { return userRepository.save(user); }
-	  public List<User> findAll() { return userRepository.findAll(); } 
-	  public void deleteUser(User user) { userRepository.delete(user); }
+	  public List<User> findAll(){
+		  return em.createNativeQuery("select * from UTILISATEUR", User.class).getResultList();
+	  }
 	  
+	  public void createUser(User user) { em.persist(user); } 
+	  public void deleteUser(User user) { user= em.merge(user);em.remove(user); }
+
+	  
+	 
 }

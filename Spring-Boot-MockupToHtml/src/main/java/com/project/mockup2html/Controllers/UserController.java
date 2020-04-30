@@ -21,12 +21,13 @@ import com.project.mockup2html.Services.UserService;
 @RestController
 
 @RequestMapping("/")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin("*")
 public class UserController {
 	public static long currentUserId=-1;
 	private final Logger log = LoggerFactory.getLogger(UserController.class);
 	@Autowired
     private UserService userDao;
+	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	
@@ -41,10 +42,10 @@ public class UserController {
         User userEmailFound = userDao.findByEmail(user.getEmail());
         if(userFound!=null || userEmailFound!=null)
         	return ResponseEntity.badRequest().body("username or email already exists");
-        user.setEnabled(true);
+        //user.setEnabled(true);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         User result = userDao.save(user);
-        return ResponseEntity.ok().body(null);
+        return ResponseEntity.ok().body("registered");
     }
 	
 	// Update User Handler
