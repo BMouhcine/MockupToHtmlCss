@@ -20,11 +20,11 @@ export class AuthenticationService {
       .post<any>("http://localhost:8080/login", { username, password },{observe: 'response'})
       .pipe(
         map((res:any) => {
+          console.log(res)
           sessionStorage.setItem('username',username)
           sessionStorage.setItem('password',password)
           this.token = res.headers.get('authorization').substring(7)
           sessionStorage.setItem('token',this.token)
-          console.log(sessionStorage.getItem('token'))
           return res;
         })
       );
@@ -45,7 +45,7 @@ export class AuthenticationService {
 //store JWT token in session
 registration(username, email ,password,repassword) {
   return this.http
-    .post<any>("http://localhost:8080/createUser", { username,email,password,repassword },{observe: 'response'})
+    .post<any>("http://localhost:8080/createUser", { username,email,password,repassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
         console.log(res)

@@ -45,7 +45,7 @@ public class UserController {
         //user.setEnabled(true);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         User result = userDao.save(user);
-        return ResponseEntity.ok().body("registered");
+        return ResponseEntity.ok().body(null);
     }
 	
 	// Update User Handler
