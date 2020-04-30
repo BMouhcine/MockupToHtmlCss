@@ -71,7 +71,7 @@ public class UserController {
 	        if(userFound!=null) {
 		        if(bCryptPasswordEncoder.matches(user.getPassword(), userFound.getPassword())) {
 		        	currentUserId = userFound.getId_user();
-		        	return ResponseEntity.ok().body("hElOOOOOOOOOO");
+		        	return ResponseEntity.ok().body(null);
 		        }
 	        }
 	        return ResponseEntity.ok().body(null);

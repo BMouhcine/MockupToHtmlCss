@@ -91,7 +91,6 @@ export class AcceuilComponent implements OnInit {
       data => {
         //we gonna change this to :id/projects
         this.router.navigate(['projects'])
-        
       },
       error => {
         console.log(error);

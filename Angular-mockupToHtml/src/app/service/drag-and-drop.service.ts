@@ -1,6 +1,7 @@
   
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import { map } from "rxjs/operators";
 import { catchError } from 'rxjs/operators';
 import { HttpErrorResponse, HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -10,21 +11,25 @@ import { HttpErrorResponse, HttpClient, HttpHeaders } from '@angular/common/http
 export class DragAndDropService {
 
   constructor(private http: HttpClient) { }
-
+ 
   addFiles(images: any) {
+    var user_id =sessionStorage.getItem("id")
     var formData = new FormData();
-    formData.append('uploadFile', images[0]);
+    formData.append('givenImage', images[0]);
+    console.log(user_id)
     
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer '+sessionStorage.getItem('token') });
-    let options = { headers: headers };
-    
-    console.log(headers.get('authorization'))
 
-    return this.http.post('http://localhost:8080/doUploadImage', formData, options).pipe(
-      catchError(this.errorMgmt)
-    )
+
+    
+    return this.http
+    .post('http://localhost:8080/doUploadImage', {formData,user_id},{observe: 'response'})
+    .pipe(  
+        map((res:any) => {
+          console.log(res)
+          return res;
+        })
+      );
+    
   }
 
   errorMgmt(error: HttpErrorResponse) {

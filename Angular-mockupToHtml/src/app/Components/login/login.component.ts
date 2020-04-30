@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
         //the help routing is just to test
-        console.log(data)
-        this.router.navigate(['acceuil'])
+
+        this.router.navigate([sessionStorage.getItem("id")+sessionStorage.getItem("token").substring(8,13)+'/acceuil'])
         this.invalidLogin = false
       },
       error => {

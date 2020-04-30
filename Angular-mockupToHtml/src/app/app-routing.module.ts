@@ -20,7 +20,7 @@ const routes: Routes = [
     { path: 'projects', component: ProjectsComponent },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: 'acceuil', component: AcceuilComponent }
+    { path: ':id/acceuil', component: AcceuilComponent }
    
     
 

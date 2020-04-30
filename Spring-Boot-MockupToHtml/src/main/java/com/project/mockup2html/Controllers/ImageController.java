@@ -34,8 +34,9 @@ public class ImageController {
         if(UserController.currentUserId!=-1) {
         	User userBuffer = userRepository.findById(UserController.currentUserId).get();
             imageUIRepository.save(new ImageUI(givenImage.getBytes(),userBuffer));
+            
         }
-        return ResponseEntity.ok().body("image uploaded and saved.");
+        return ResponseEntity.ok().body(null);
     }
 	
 }

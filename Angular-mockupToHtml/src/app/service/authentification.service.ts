@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 export class User {
   constructor(public status: string) {}
@@ -12,6 +13,7 @@ export class User {
 })
 export class AuthenticationService {
   token : string 
+  id : string
   constructor(private http: HttpClient) {}
 // Provide username and password for authentication, and once authentication is successful, 
 //store JWT token in session
@@ -23,7 +25,9 @@ export class AuthenticationService {
           console.log(res)
           sessionStorage.setItem('username',username)
           sessionStorage.setItem('password',password)
-          this.token = res.headers.get('authorization').substring(7)
+          this.token = res.headers.get('authorization')
+          this.id = res.headers.get('id_user')
+          sessionStorage.setItem('id',this.id)
           sessionStorage.setItem('token',this.token)
           return res;
         })
@@ -40,6 +44,7 @@ export class AuthenticationService {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("password");
     sessionStorage.removeItem("token");
+    sessionStorage.removeItem("id");
   }
   // Provide username and email and password and repassword for registration, and once authentication is successful, 
 //store JWT token in session
