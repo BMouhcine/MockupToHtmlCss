@@ -29,8 +29,8 @@ public class ImageController {
 	
 	
 	@PostMapping(value = "/doUploadImage", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> uploadImageHandler(@RequestParam MultipartFile givenImage) throws IOException {
-        System.out.println("File name"+givenImage.getOriginalFilename()+" uploaded successfully.");
+    public ResponseEntity<String> uploadImageHandler(@RequestParam MultipartFile givenImage, @RequestParam long user_id) throws IOException {
+        System.out.println("File name"+givenImage.getOriginalFilename()+" uploaded successfully by "+user_id+".");
         if(UserController.currentUserId!=-1) {
         	User userBuffer = userRepository.findById(UserController.currentUserId).get();
             imageUIRepository.save(new ImageUI(givenImage.getBytes(),userBuffer));
