@@ -16,13 +16,14 @@ export class DragAndDropService {
     var user_id =sessionStorage.getItem("id")
     var formData = new FormData();
     formData.append('givenImage', images[0]);
+    formData.append('user_id',user_id);
     console.log(user_id)
     
 
 
     
     return this.http
-    .post('http://localhost:8080/doUploadImage', {formData,user_id},{observe: 'response'})
+    .post('http://localhost:8080/doUploadImage', formData,{observe: 'response'})
     .pipe(  
         map((res:any) => {
           console.log(res)
