@@ -4,8 +4,6 @@ matrix:
       dist: trusty
       install: true
       jdk: openjdk8
-      before_script:
-        - cd Spring-Boot-MockupToHtml/
       script:
         - mvn install 
 
@@ -15,6 +13,6 @@ matrix:
       dist: trusty
       sudo: required
       before_script:
-        - cd Angular-mockupToHtml/
+        - cd client/
       script: 
         - npm install -g @angular/cli
