@@ -1,20 +1,23 @@
-<form action="" method="post">  
-    <div class="container">				
+<form action="" method="post" class="mt-4">  
+    <div class="container formgroup">				
         <div class="form-group">
-          <label>Username</label>
-          <input class="form-control" placeholder="Username" [(ngModel)]="username" name="username" required="required">
+          <div class="clearfix">
+            <label>Username</label>
+          </div>          
+          <input class ="formgroup1" type="text" pInputText [(ngModel)]="username" placeholder="Username" name="username" required="required"/>
         </div>
         <div class="form-group">
           <div class="clearfix">
             <label>Password</label>
-            <a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
+            <a href="#" class="pull-right text-muted"><small> Forgot?</small></a>
           </div>
-          <input placeholder="Password" [(ngModel)]="password" type="password" name="password" class="form-control" required="required">
+          <input class ="formgroup1" type="password" pPassword placeholder="Password" [(ngModel)]="password"  name="password"  required="required"/>
+        </div>
+        <div class="modal-footer">
+          <label class="checkbox-inline pull-left mr-3"><input type="checkbox"> Remember me</label>
+          <!--input type="submit" (click)="checkLogin()" class="btn btn-primary pull-right" value="Login"-->
+          <button pButton type="submit" label="Login" (click)="checkLogin()" class="ui-button-rounded pull-right"></button>
         </div>
       </div>
-      <div class="modal-footer">
-        <label class="checkbox-inline pull-left"><input type="checkbox"> Remember me</label>
-        <!--input type="submit" (click)="checkLogin()" class="btn btn-primary pull-right" value="Login"-->
-        <button pButton type="submit" label="Login" (click)="checkLogin()" class="ui-button-rounded pull-right"></button>
-      </div>
+      
   </form>

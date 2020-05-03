@@ -26,6 +26,8 @@ import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 import { ProgressComponent } from './Component/progress/progress.component';
 import { DndDirective } from './directives/dnd.directive';
 import {ButtonModule} from 'primeng/button';
+import {PasswordModule} from 'primeng/password';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import {ButtonModule} from 'primeng/button';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    PasswordModule,
+    InputTextModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
