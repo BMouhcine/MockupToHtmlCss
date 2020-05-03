@@ -1,3 +1,1 @@
-web: npm install Angular-mockupToHtml/ 
-api: mvn install -DskipTests Spring-Boot-MockupToHtml/ 
-release: java $JAVA_OPTS -jar target/*.jar --p $PORT 
+web: java $JAVA_OPTS -jar target/mockup2html-0.0.1-SNAPSHOT.jar --server.port=$PORT
