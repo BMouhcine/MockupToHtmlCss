@@ -90,7 +90,7 @@ export class AcceuilComponent implements OnInit {
     (this.imageservice.addFiles(this.files).subscribe(
       data => {
         //we gonna change this to :id/projects
-        this.router.navigate(['projects'])
+        this.router.navigate([sessionStorage.getItem("id")+sessionStorage.getItem("token").substring(8,13)+'/projects'])
       },
       error => {
         console.log(error);
