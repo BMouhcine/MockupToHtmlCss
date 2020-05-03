@@ -35,6 +35,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter implements Applica
                 .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/createUser").permitAll()
+                .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
                 .and().exceptionHandling().accessDeniedPage("/accessDenied").and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager(),userDao))
