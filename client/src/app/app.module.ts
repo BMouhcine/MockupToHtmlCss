@@ -28,6 +28,10 @@ import { DndDirective } from './directives/dnd.directive';
 import {ButtonModule} from 'primeng/button';
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
+import {CheckboxModule} from 'primeng/checkbox';
+import {CardModule} from 'primeng/card';
+
+
 
 
 @NgModule({
@@ -60,7 +64,12 @@ import {InputTextModule} from 'primeng/inputtext';
     HttpClientModule,
     ButtonModule,
     PasswordModule,
-    InputTextModule
+    InputTextModule,
+    CheckboxModule,
+    CardModule,
+
+    
+    
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true

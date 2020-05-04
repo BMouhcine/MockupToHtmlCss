@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../service/authentification.service';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-navbar-app',
@@ -8,6 +9,7 @@ import { AuthenticationService } from '../../service/authentification.service';
   styleUrls: ['./navbar-app.component.css']
 })
 export class NavbarAppComponent implements OnInit {
+  
   @Input() username: string ; 
   
 ;
@@ -18,8 +20,9 @@ export class NavbarAppComponent implements OnInit {
       this.username=sessionStorage.getItem('username')
     }else{
       this.username=''
-
     }
+    
+    
   }
   logout() {
     this.service.logOut()

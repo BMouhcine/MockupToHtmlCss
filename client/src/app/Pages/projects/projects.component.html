@@ -1,15 +1,14 @@
 <div>
   <app-navbar-app></app-navbar-app>
-    <div class="container">
-        <div class="card mt-3" style="width: 18rem;">
-            <img src="https://kishstats.com/assets/2018/07/bootstrap-cards.png" class="card-img-top" alt="..." Placeholder= "The image uploaded">
-            <div class="card-body">
-              <h5 class="card-title">Project 1</h5>
-              <p class="card-text">Download bellow your code Html with Css, Enjoy !.</p>
-              <!--a href="#" class="btn btn-primary stretched-link">Download</a-->
-              <button pButton type="submit" label="Download" class="ui-button-rounded stretched-link"></button>
-
-            </div>
-          </div>
+    <div class="container mt-4">
+      <p-card header="Project number" subheader="Description" [style]="{width: '260px'}" styleClass="ui-card-shadow">
+        <p-header>
+            <img src="Card" src="https://www.primefaces.org/primeng/showcase/assets/showcase/images/usercard.png">
+        </p-header>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt</div>
+        <p-footer>
+            <button pButton type="button" label="Download" icon="pi pi-check" style="margin-right: .25em"></button>
+        </p-footer>
+    </p-card>
     </div>
 </div>

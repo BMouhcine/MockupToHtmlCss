@@ -14,8 +14,7 @@
           <input class ="formgroup1" type="password" pPassword placeholder="Password" [(ngModel)]="password"  name="password"  required="required"/>
         </div>
         <div class="modal-footer">
-          <label class="checkbox-inline pull-left mr-3"><input type="checkbox"> Remember me</label>
-          <!--input type="submit" (click)="checkLogin()" class="btn btn-primary pull-right" value="Login"-->
+          <p-checkbox name="groupname" class ="mr-3" value="val1"label="Remember me" ></p-checkbox>          <!--input type="submit" (click)="checkLogin()" class="btn btn-primary pull-right" value="Login"-->
           <button pButton type="submit" label="Login" (click)="checkLogin()" class="ui-button-rounded pull-right"></button>
         </div>
       </div>
