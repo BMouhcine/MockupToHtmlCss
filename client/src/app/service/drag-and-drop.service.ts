@@ -10,18 +10,18 @@ import { HttpErrorResponse, HttpClient, HttpHeaders } from '@angular/common/http
 })
 export class DragAndDropService {
 
-  constructor(private http: HttpClient) { }
- 
+  constructor(private http: HttpClient) {
+
+
+  }
+       
   addFiles(images: any) {
     var user_id =sessionStorage.getItem("id")
     var formData = new FormData();
     formData.append('givenImage', images[0]);
     formData.append('user_id',user_id);
     console.log(user_id)
-    
 
-
-    
     return this.http
     .post('/doUploadImage', formData,{observe: 'response'})
     .pipe(  
