@@ -7,7 +7,7 @@ Link for CD: *[https://m2c-cd.herokuapp.com](https://m2c-cd.herokuapp.com/)*.
 ## Projet Frameworks JEE 
 Professeur encadrant : **[ELHAMLAOUI Mahmoud](https://github.com/ELHAMLAOUI/)**  
 - *[OUOKKI Mohamed](https://github.com/Ouokki/)*
-- *[Boutinzer Mouhcine](https://github.com/BMouhcine/)*
+- *[BOUTINZER Mouhcine](https://github.com/BMouhcine/)*
 - *[NIA Achraf](https://github.com/Achrafnia/)*
 - *[MERGHICHI Imane](https://github.com/imerghichi/)* 
    
