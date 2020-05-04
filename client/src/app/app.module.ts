@@ -30,6 +30,8 @@ import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
 import {CardModule} from 'primeng/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 
@@ -67,6 +69,9 @@ import {CardModule} from 'primeng/card';
     InputTextModule,
     CheckboxModule,
     CardModule,
+    BrowserAnimationsModule,
+    FileUploadModule
+
 
     
     

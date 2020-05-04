@@ -1,4 +1,4 @@
-<div >
+<!--div>
     <app-navbar-app></app-navbar-app>
     <form action="" method="post">  
     <div class="container" appDnd (fileDropped)="onFileDropped($event)">
@@ -23,7 +23,7 @@
             </div>
             <div class="row float-right">
             <img src="../../../assets/ic-delete-file.svg" class="delete  mb-2 mr-2 mt-3" width="20px" alt="file" (click)="deleteFile(i)">
-            <!--input type="submit" class="btn btn-primary mr-3 mt-2" (click)="sendimage()"  value="upload"-->
+            //input type="submit" class="btn btn-primary mr-3 mt-2" (click)="sendimage()"  value="upload">
             <button pButton type="button" label="Upload" (click)="sendimage()" class="ui-button-rounded mr-3 mt-2"></button>
 
             </div>
@@ -35,4 +35,12 @@
       
   </form>
     
+</div-->
+<div>
+    <app-navbar-app></app-navbar-app>
+    <div class="container" >
+<!--p-fileUpload name="myfile[]" customUpload="true" multiple="multiple" (uploadHandler)="upload($event)" accept="application/pdf"></p-fileUpload-->
+<h3 >Drag and drop your image here</h3>
+<p-fileUpload (uploadHandler)="upload($event)" customUpload="true" multiple="multiple" name="myfile[]"  multiple="multiple" accept="image/*" maxFileSize="1000000"></p-fileUpload>
+</div>
 </div>
