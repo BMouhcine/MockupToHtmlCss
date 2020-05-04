@@ -32,8 +32,15 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {CardModule} from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadModule } from 'primeng/fileupload';
+import { OpenCVOptions } from 'projects/ng-open-cv/src/public_api';
+import { NgOpenCVModule } from 'ng-open-cv';
+import { FaceDetectionComponent } from './faceDetection/face-detection/face-detection.component';
 
-
+const openCVConfig: OpenCVOptions = {
+  scriptUrl: `assets/opencv/opencv.js`,
+  wasmBinaryFile: 'wasm/opencv_js.wasm',
+  usingWasm: true
+};
 
 
 @NgModule({
@@ -53,6 +60,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     AcceuilComponent,
     ProgressComponent,
     DndDirective,
+    FaceDetectionComponent,
   
 
   ],
@@ -70,7 +78,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     CheckboxModule,
     CardModule,
     BrowserAnimationsModule,
-    FileUploadModule
+    FileUploadModule,
+    NgOpenCVModule.forRoot(openCVConfig)
 
 
     

@@ -7,6 +7,8 @@ import { ProjectsComponent } from './Pages/projects/projects.component';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegistrationPageComponent } from './Pages/registration-page/registration-page.component';
 import {AcceuilComponent } from './Pages/acceuil/acceuil.component';
+import { FaceDetectionComponent } from './faceDetection/face-detection/face-detection.component';
+
  
 
 
@@ -20,7 +22,8 @@ const routes: Routes = [
     { path: ':id/projects', component: ProjectsComponent },
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: ':id/acceuil', component: AcceuilComponent }
+    { path: ':id/acceuil', component: AcceuilComponent },
+    { path: 'test', component: FaceDetectionComponent }
    
     
 
