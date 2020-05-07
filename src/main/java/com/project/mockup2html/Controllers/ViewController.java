@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ViewController {
 	
 	//Login Register Handler
-		@GetMapping("/")
+		@GetMapping("/about")
 	    public String portalAngularHandler() {
 	        return "forward:./index.html";
 	    }
