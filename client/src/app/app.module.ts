@@ -32,6 +32,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {CardModule} from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadModule } from 'primeng/fileupload';
+import { AuthGuardService } from './service/auth-guard.service';
 
 
 
@@ -78,7 +79,7 @@ import { FileUploadModule } from 'primeng/fileupload';
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
-  }
+  },AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
