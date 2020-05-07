@@ -79,7 +79,7 @@ import { AuthGuardService } from './service/auth-guard.service';
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS, useClass:BasicAuthHtppInterceptorService, multi:true
-  },AuthGuardService
+  }
   ],
   bootstrap: [AppComponent]
 })
