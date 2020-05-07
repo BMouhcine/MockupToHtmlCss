@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ViewController {
 	
 	//Login Register Handler
-		@GetMapping("/about")
+		@GetMapping("/error")
 	    public String portalAngularHandler() {
-	        return "forward:./index.html";
-	    }
+	        return "<h2>Cannot Access this URL</h2>";
+		}
+		
 	
 }
