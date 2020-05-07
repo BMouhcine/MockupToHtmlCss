@@ -19,10 +19,10 @@ const routes: Routes = [
     { path: '', component: HomeComponent },  
     { path: 'about', component: AboutComponent },  
     { path: 'help', component: HelpComponent },
-    { path: ':id/projects', component: ProjectsComponent},
+    { path: ':id/projects', component: ProjectsComponent,canActivate:[AuthGuardService]},
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: ':id/acceuil', component: AcceuilComponent},
+    { path: ':id/acceuil', component: AcceuilComponent,canActivate:[AuthGuardService]},
    
     
 
