@@ -7,7 +7,7 @@ import { ProjectsComponent } from './Pages/projects/projects.component';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegistrationPageComponent } from './Pages/registration-page/registration-page.component';
 import {AcceuilComponent } from './Pages/acceuil/acceuil.component';
-import { FaceDetectionComponent } from './faceDetection/face-detection/face-detection.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
  
 
@@ -19,11 +19,10 @@ const routes: Routes = [
     { path: '', component: HomeComponent },  
     { path: 'about', component: AboutComponent },  
     { path: 'help', component: HelpComponent },
-    { path: ':id/projects', component: ProjectsComponent },
+    { path: ':id/projects', component: ProjectsComponent,canActivate:[AuthGuardService]},
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
-    { path: ':id/acceuil', component: AcceuilComponent },
-    { path: 'test', component: FaceDetectionComponent }
+    { path: ':id/acceuil', component: AcceuilComponent,canActivate:[AuthGuardService]},
    
     
 
