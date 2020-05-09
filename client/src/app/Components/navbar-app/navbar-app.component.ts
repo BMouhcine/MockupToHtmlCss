@@ -23,7 +23,7 @@ export class NavbarAppComponent implements OnInit {
     if (this.service.isUserLoggedIn) {
       
       if(sessionStorage.getItem('token') && sessionStorage.getItem('username')){
-        this.directive='?'+sessionStorage.getItem("token").substring(13,18)
+        this.directive=sessionStorage.getItem("token").substring(13,18)
         this.username=sessionStorage.getItem('username')
       }
       
