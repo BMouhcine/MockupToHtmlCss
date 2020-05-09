@@ -8,6 +8,7 @@ import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegistrationPageComponent } from './Pages/registration-page/registration-page.component';
 import {AcceuilComponent } from './Pages/acceuil/acceuil.component';
 import { AuthGuardService } from './service/auth-guard.service';
+import { ProfileComponent } from './Pages/edit/profile/profile.component';
 
  
 
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
     { path: ':id/acceuil', component: AcceuilComponent,canActivate:[AuthGuardService]},
+    { path: ':id/acceuil/:id/edit', component: ProfileComponent,canActivate:[AuthGuardService]},
    
     
 

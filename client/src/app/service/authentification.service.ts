@@ -58,6 +58,16 @@ registration(username, email ,password,repassword) {
       })
     );
 }
+editProfile(lastUsername, newUsername ,lastpassword,newPassword) {
+  return this.http
+    .post<any>("/editUser", { lastUsername,newUsername,lastpassword,newPassword },{observe: 'response',responseType:'json'})
+    .pipe(
+      map((res:any) => {
+        console.log(res)
+        return res;
+      })
+    );
+}
 
 
 }

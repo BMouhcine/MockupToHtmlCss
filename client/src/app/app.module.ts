@@ -33,6 +33,7 @@ import {CardModule} from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadModule } from 'primeng/fileupload';
 import { AuthGuardService } from './service/auth-guard.service';
+import { ProfileComponent } from './Pages/edit/profile/profile.component';
 
 
 
@@ -53,6 +54,7 @@ import { AuthGuardService } from './service/auth-guard.service';
     AcceuilComponent,
     ProgressComponent,
     DndDirective,
+    ProfileComponent,
 
   
 

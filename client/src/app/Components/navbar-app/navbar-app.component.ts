@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../service/authentification.service';
-import {MenuItem} from 'primeng/api';
+
 
 @Component({
   selector: 'app-navbar-app',
@@ -10,17 +10,32 @@ import {MenuItem} from 'primeng/api';
 })
 export class NavbarAppComponent implements OnInit {
   
-  @Input() username: string ; 
+  @Input() username: any ; 
+  @Input() directive: any ; 
   
-;
-  constructor(private router: Router,private service: AuthenticationService) { }
+  
+  constructor(private router: Router,private service: AuthenticationService) {
+    
+   }
 
   ngOnInit(): void {
+    
     if (this.service.isUserLoggedIn) {
-      this.username=sessionStorage.getItem('username')
+      
+      if(sessionStorage.getItem('token') && sessionStorage.getItem('username')){
+        this.directive='?'+sessionStorage.getItem("token").substring(13,18)
+        this.username=sessionStorage.getItem('username')
+      }
+      
+      
     }else{
       this.username=''
+      this.directive=''
+      
     }
+  
+ 
+   
     
     
   }

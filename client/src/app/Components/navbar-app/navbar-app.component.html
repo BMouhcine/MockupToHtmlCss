@@ -7,8 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link">{{username}}</a>
+            <a class="nav-link" [routerLink]="['/']">{{username}}</a>
         </li>
+        <li class="nav-item" *ngIf="directive">
+          <a class="nav-link" [routerLink]="directive+'/edit'">Edit profile</a>
+      </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/projects']">My Projects</a>
       </li>
@@ -19,7 +22,7 @@
           <a class="nav-link" [routerLink]="['/about']">About</a>
         </li>
         <li class="nav-item" *ngIf="username" >
-          <a class="nav-link" (click)="logout()" >logout</a>
+          <a class="nav-link" [routerLink]="['/']" (click)="logout()" >logout</a>
         </li>
       </ul>
       
