@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DragAndDropService } from '../../service/drag-and-drop.service';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-acceuil',
@@ -9,7 +10,9 @@ import { DragAndDropService } from '../../service/drag-and-drop.service';
 })
 export class AcceuilComponent implements OnInit {
 
-  constructor(private router: Router,private imageservice: DragAndDropService ) { }
+  constructor(private router: Router,private imageservice: DragAndDropService ,private titleService:Title) { 
+    this.titleService.setTitle("Acceuil");
+  }
 
   ngOnInit(): void {
   }

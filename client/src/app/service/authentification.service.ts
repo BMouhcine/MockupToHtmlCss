@@ -19,7 +19,7 @@ export class AuthenticationService {
 //store JWT token in session
   authenticate(username, password) {
     return this.http
-      .post<any>("/login", { username, password },{observe: 'response'})
+      .post("http://localhost:8080/login", { username, password },{observe: 'response'})
       .pipe(
         map((res:any) => {
           console.log(res)
