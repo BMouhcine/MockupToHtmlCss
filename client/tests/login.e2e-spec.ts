@@ -14,7 +14,6 @@ describe('Login tests', () => {
     element(by.name('password')).sendKeys('hzg');
     element(by.css('#loginForm'));
     element(by.css('#btnSubmit')).click();
-    //protractor.browser.sleep(5000);
     console.log("-------------------------------------");
     expect(browser.getTitle()).toEqual('Acceuil');
     //protractor.browser.wait(protractor.until.elementIsVisible(hzg), 5000, 'Error: Element did not display within 5 seconds');
