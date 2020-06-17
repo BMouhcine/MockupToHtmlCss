@@ -76,11 +76,12 @@ public class ImageController {
 		Mat imgAdaptedMat = new Mat();
 		Mat imgStackedMat = new Mat();
 		Mat imgResizedMat = new Mat();
+		Mat bgImg = new Mat();
 		Imgproc.cvtColor(imgMat, grayImgMat, Imgproc.COLOR_RGB2GRAY);
 		Imgproc.adaptiveThreshold(grayImgMat, imgAdaptedMat, 255, Imgproc.ADAPTIVE_THRESH_MEAN_C, Imgproc.THRESH_BINARY, 101, 9);
 		Core.repeat(imgAdaptedMat, 3, 3, imgStackedMat);
 		Imgproc.resize(imgStackedMat, imgResizedMat, new Size(200, 200), 200, 200, Imgproc.INTER_AREA);
-		Mat bgImg = Mat.ones(256, 256, CvType.CV_16U);Core.repeat(bgImg, 3, 3, bgImg);Core.multiply(bgImg, new Scalar(255), bgImg);
+		Mat bgImgMat = Mat.ones(256, 256, CvType.CV_16U);Core.repeat(bgImgMat, 3, 3, bgImg);Core.multiply(bgImg, new Scalar(255), bgImg);
 		Core.multiply(imgResizedMat, bgImg, imgResizedMat);
 		for(int i=27;i<227;i++) {
 			for(int j=27;j<227;j++) {
