@@ -20,6 +20,7 @@ public class ViewController {
 			OpenCV.loadShared();
 			Mat imgMat = loadImage(this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile());
 			String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height);
+			dataString = dataString + "\n Path: "+ this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile();
 			
 			return dataString;
 	        //return "forward:./index.html";
