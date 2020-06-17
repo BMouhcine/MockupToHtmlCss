@@ -2,6 +2,7 @@ package com.project.mockup2html.Controllers;
 
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.imageio.IIOImage;
 
@@ -21,7 +22,10 @@ import com.project.mockup2html.Models.ImageUI;
 import com.project.mockup2html.Models.User;
 import com.project.mockup2html.Repositories.ImageUIRepository;
 import com.project.mockup2html.Repositories.UserRepository;
+import com.sun.xml.internal.xsom.impl.scd.Iterators.Map;
 
+import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
 import nu.pattern.OpenCV;
 
 @RestController
@@ -43,18 +47,22 @@ public class ImageController {
         	User userBuffer = userRepository.findById(UserController.currentUserId).get();
         	OpenCV.loadShared();
             imageUIRepository.save(new ImageUI(givenImage.getBytes(),userBuffer));
-            
-            Mat imgMat = Imgcodecs.imdecode(new MatOfByte(givenImage.getBytes()), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
-            String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height)+"\n Path: "+ this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile();
+            java.util.Map<String, Integer> imgMap = new HashMap<>();
+            Mat imgMat = loadImage(givenImage);
+            imgMap.put("height", Integer.valueOf((int) imgMat.size().height));
+            imgMap.put("width", Integer.valueOf((int) imgMat.size().width));
+            imgMap.put("depth",imgMat.channels());
+            String dataString = JSONObject.toJSONString(imgMap);
+            //String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height)+"\n Path: "+ this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile();
             return ResponseEntity.ok().body(dataString);
         }
-        return ResponseEntity.ok().body("hhhhhhh");
+        return ResponseEntity.ok().body(null);
     }
 	
 	
-	public static Mat loadImage(String imagePath) {
-	    Imgcodecs imageCodecs = new Imgcodecs();
-	    return imageCodecs.imread(imagePath);
+	public static Mat loadImage(MultipartFile givenImage) throws IOException {
+		Mat imgMat = Imgcodecs.imdecode(new MatOfByte(givenImage.getBytes()), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
+	    return imgMat;
 	}
 	
 }
