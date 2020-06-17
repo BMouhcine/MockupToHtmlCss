@@ -13,10 +13,10 @@ export class HelpComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  
+
   }
 
 
 
-  
+
 }
