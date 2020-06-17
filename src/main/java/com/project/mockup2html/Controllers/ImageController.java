@@ -46,7 +46,7 @@ public class ImageController {
             
             Mat imgMat = Imgcodecs.imdecode(new MatOfByte(givenImage.getBytes()), Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
             String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height)+"\n Path: "+ this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile();
-            
+            return ResponseEntity.ok().body(dataString);
         }
         return ResponseEntity.ok().body(null);
     }
