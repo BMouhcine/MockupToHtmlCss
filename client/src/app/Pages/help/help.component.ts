@@ -1,4 +1,4 @@
-  
+
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { fromEvent, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -22,8 +22,10 @@ export class HelpComponent implements OnInit {
 
   constructor(private ngOpenCVService: NgOpenCVService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.openCVLoadResult = this.ngOpenCVService.isReady$;
+
+
   }
 
   loadImage(event) {
@@ -46,5 +48,5 @@ export class HelpComponent implements OnInit {
     }
   }
 
-  
+
 }
