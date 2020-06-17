@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.project.mockup2html.Testing.TestArqContainer
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.002 s - in com.project.mockup2html.Testing.TestArqContainer
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.842 s <<< FAILURE! - in com.project.mockup2html.Testing.TestArqContainer
+com.project.mockup2html.Testing.TestArqContainer  Time elapsed: 3.842 s  <<< ERROR!
+java.lang.RuntimeException: Could not invoke deployment method: public static org.jboss.shrinkwrap.api.spec.JavaArchive com.project.mockup2html.Testing.TestArqContainer.createDeployment()
+	at com.project.mockup2html.Testing.TestArqContainer.createDeployment(TestArqContainer.java:31)
+
