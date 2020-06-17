@@ -19,8 +19,8 @@ public class DemoApplication {
 		logger.trace("A TRACE Message");
         logger.debug("A DEBUG Message");
         logger.info("An INFO Message");
-        logger.warn("A WARN Message");
-        logger.error("An ERROR Message");
+        //logger.warn("A WARN Message");
+        //logger.error("An ERROR Message");
 	}
 	@Bean
 	  public BCryptPasswordEncoder bCryptPasswordEncoder() {
