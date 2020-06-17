@@ -58,6 +58,7 @@ public class ImageController {
             imgMap.put("height", Integer.valueOf((int) imgMat.size().height));
             imgMap.put("width", Integer.valueOf((int) imgMat.size().width));
             imgMap.put("depth",imgMat.channels());
+            imgMap.put("an element haha", Integer.valueOf((int) imgMat.get(500, 500)[0]));
             String dataString = JSONObject.toJSONString(imgMap);
             //String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height)+"\n Path: "+ this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile();
             return ResponseEntity.ok().body(dataString);
