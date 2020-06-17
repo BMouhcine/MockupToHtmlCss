@@ -38,6 +38,7 @@ public class ImageController {
             imageUIRepository.save(new ImageUI(givenImage.getBytes(),userBuffer));
             
         }
+        
         return ResponseEntity.ok().body("Image uploaded");
     }
 	
