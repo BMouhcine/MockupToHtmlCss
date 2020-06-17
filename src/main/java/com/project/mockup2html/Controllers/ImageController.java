@@ -92,8 +92,7 @@ public class ImageController {
 				  }
 			  }
 		  Core.divide(bgImg,new Scalar(255, 255, 255), bgImg);
-		 
-		
+		  bgImg = bgImg.reshape(256, 256);
 		
 		return bgImg;
 	}
