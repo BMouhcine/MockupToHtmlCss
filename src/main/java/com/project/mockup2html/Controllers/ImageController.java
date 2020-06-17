@@ -38,7 +38,7 @@ public class ImageController {
             
         }
         
-        return ResponseEntity.ok().body("Image uploaded");
+        return ResponseEntity.ok().body(null);
     }
 	
 	
