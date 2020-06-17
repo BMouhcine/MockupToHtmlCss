@@ -82,7 +82,7 @@ public class ImageController {
 		Core.repeat(imgAdaptedMat, 3, 3, imgStackedMat);
 		Imgproc.resize(imgStackedMat, imgResizedMat, new Size(200, 200), 200, 200, Imgproc.INTER_AREA);
 		Mat bgImgMat = Mat.ones(256, 256, CvType.CV_16U);Core.repeat(bgImgMat, 3, 3, bgImg);
-		//Core.multiply(bgImg, new Scalar(255, 255, 255), bgImg);
+		Core.multiply(bgImg, new Scalar(255, 255, 255), bgImg);
 		/*
 		 * Core.multiply(imgResizedMat, bgImg, imgResizedMat); for(int i=27;i<227;i++) {
 		 * for(int j=27;j<227;j++) { bgImg.put(i, j, imgResizedMat.get(i-27, j-27)); } }
