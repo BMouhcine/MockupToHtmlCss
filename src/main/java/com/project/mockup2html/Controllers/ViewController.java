@@ -16,9 +16,12 @@ public class ViewController {
 	
 	//Login Register Handler
 		@GetMapping("/login")
-	    public Mat portalAngularHandler() {
+	    public String portalAngularHandler() {
 			OpenCV.loadShared();
-			return loadImage(this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile());
+			Mat imgMat = loadImage(this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile());
+			String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height);
+			
+			return dataString;
 	        //return "forward:./index.html";
 		}
 		
