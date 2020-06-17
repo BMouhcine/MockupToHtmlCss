@@ -3,15 +3,13 @@ package com.project.mockup2html.Controllers;
 
 import javax.validation.Valid;
 
-import org.opencv.core.Mat;
-import org.opencv.imgcodecs.Imgcodecs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,14 +80,6 @@ public class UserController {
 	    }
      	
      	
-     	@GetMapping("/hzg")
-     	public Mat loadIt() {
-     		return loadImage(this.getClass().getClassLoader().getResource("static/assets/upload-icon").getFile());
-     	}
-     	public static Mat loadImage(String imagePath) {
-		    Imgcodecs imageCodecs = new Imgcodecs();
-		    return imageCodecs.imread(imagePath);
-		}
 	
 	
 	
