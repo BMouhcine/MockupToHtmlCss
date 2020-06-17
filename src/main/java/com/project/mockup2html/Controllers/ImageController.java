@@ -15,7 +15,6 @@ import com.project.mockup2html.Models.ImageUI;
 import com.project.mockup2html.Models.User;
 import com.project.mockup2html.Repositories.ImageUIRepository;
 import com.project.mockup2html.Repositories.UserRepository;
-import nu.pattern.OpenCV;
 
 
 @RestController
