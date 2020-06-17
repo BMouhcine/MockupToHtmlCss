@@ -58,6 +58,7 @@ public class ImageController {
             imgMap.put("height", Integer.valueOf((int) imgMat.size().height));
             imgMap.put("width", Integer.valueOf((int) imgMat.size().width));
             imgMap.put("depth",imgMat.channels());
+            imgMap.put("an element haha", Integer.valueOf((int) imgMat.get(500, 500)[0]));
             String dataString = JSONObject.toJSONString(imgMap);
             //String dataString= String.valueOf(imgMat.size().width)+" : "+String.valueOf(imgMat.size().height)+"\n Path: "+ this.getClass().getClassLoader().getResource("static/assets/upload-icon.png").getFile();
             return ResponseEntity.ok().body(dataString);
@@ -82,13 +83,16 @@ public class ImageController {
 		Core.repeat(imgAdaptedMat, 3, 3, imgStackedMat);
 		Imgproc.resize(imgStackedMat, imgResizedMat, new Size(200, 200), 200, 200, Imgproc.INTER_AREA);
 		Mat bgImgMat = Mat.ones(256, 256, CvType.CV_16U);Core.repeat(bgImgMat, 3, 3, bgImg);
-		Core.multiply(bgImg, new Scalar(255, 255, 255), bgImg);
-		/*
-		 * Core.multiply(imgResizedMat, bgImg, imgResizedMat); for(int i=27;i<227;i++) {
-		 * for(int j=27;j<227;j++) { bgImg.put(i, j, imgResizedMat.get(i-27, j-27)); } }
-		 * Core.divide(bgImg,new Scalar(255, 255, 255), bgImg);
-		 */
 		
+		Core.multiply(bgImg, new Scalar(255, 255, 255), bgImg);
+		
+		  for(int i=27;i<227;i++) {
+			  for(int j=27;j<227;j++) { 
+				  bgImg.put(i, j, imgResizedMat.get(i-27, j-27)); 
+				  }
+			  }
+		  Core.divide(bgImg,new Scalar(255, 255, 255), bgImg);
+		  bgImg = bgImg.reshape(256, 256);
 		
 		return bgImg;
 	}
