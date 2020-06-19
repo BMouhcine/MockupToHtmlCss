@@ -21,8 +21,6 @@ public class ImageUI {
 	@JoinColumn(name="id_user", nullable = false)
 	private User user;
 	
-	@OneToOne
-    private Code code;
 	
 	public ImageUI() {
 		// TODO Auto-generated constructor stub
