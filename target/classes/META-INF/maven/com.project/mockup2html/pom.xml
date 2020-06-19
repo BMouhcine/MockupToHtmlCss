@@ -21,11 +21,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-		    <groupId>org.openpnp</groupId>
-		    <artifactId>opencv</artifactId>
-		    <version>3.4.2-0</version>
-		</dependency>
 	<dependency>
            <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
@@ -108,7 +103,6 @@
             <dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-test-autoconfigure</artifactId>
-
 			</dependency>
 
 
@@ -151,6 +145,22 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		
+				<dependency>
+						  <groupId>org.springframework.boot</groupId>
+						  <artifactId>spring-boot-starter-web</artifactId>
+						    <exclusions>
+						        <exclusion>
+						            <groupId>org.springframework.boot</groupId>
+						            <artifactId>spring-boot-starter-logging</artifactId>
+						        </exclusion>
+						    </exclusions>
+						</dependency>
+						 
+						<dependency>
+						    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 	</dependencies>
 

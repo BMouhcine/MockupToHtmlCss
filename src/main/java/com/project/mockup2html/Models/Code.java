@@ -10,27 +10,31 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
-public class ImageUI {
+public class Code {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
-	private byte[] img;
+	private String htmlcode;
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="id_user", nullable = false)
 	private User user;
 	
-	@OneToOne(mappedBy = "imageUI")
-    private Code code;
 	
-	public ImageUI() {
+	@OneToOne
+	@JoinColumn(name="id_img", nullable = false, referencedColumnName = "id")
+	private ImageUI imageUI;
+	
+	
+	public Code() {
 		// TODO Auto-generated constructor stub
 	}
-	public ImageUI(byte[] img, User user) {
+	public Code(String htmlcode, User user, ImageUI imageUI) {
 		super();
-		this.img = img;
+		this.imageUI = imageUI;
 		this.user = user;
+		this.htmlcode = htmlcode;
 	}
 	public Long getId_img() {
 		return id;
@@ -39,11 +43,20 @@ public class ImageUI {
 		this.id = id_img;
 	}
 	
-	public byte[] getImg() {
-		return img;
+	public String getHtmlCode() {
+		return htmlcode;
 	}
-	public void setImg(byte[] img) {
-		this.img = img;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getHtmlcode() {
+		return htmlcode;
+	}
+	public void setHtmlcode(String htmlcode) {
+		this.htmlcode = htmlcode;
 	}
 	public User getUser() {
 		return user;
@@ -51,5 +64,12 @@ public class ImageUI {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public ImageUI getImageUI() {
+		return imageUI;
+	}
+	public void setImageUI(ImageUI imageUI) {
+		this.imageUI = imageUI;
+	}
+
 	
 }
