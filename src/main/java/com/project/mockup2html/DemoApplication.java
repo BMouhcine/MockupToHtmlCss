@@ -27,8 +27,5 @@ public class DemoApplication {
 	  public BCryptPasswordEncoder bCryptPasswordEncoder() {
 	      return new BCryptPasswordEncoder();
 	  }
-	@Bean 
-	RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
+
 }
