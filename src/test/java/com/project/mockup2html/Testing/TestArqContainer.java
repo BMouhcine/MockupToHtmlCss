@@ -16,6 +16,7 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import com.project.mockup2html.Models.Code;
 import com.project.mockup2html.Models.User;
 import com.project.mockup2html.Repositories.UserRepository;
 
@@ -27,7 +28,7 @@ public class TestArqContainer {
 	@Deployment
 	public static JavaArchive createDeployment() {
 		return ShrinkWrap.create(JavaArchive.class)
-				.addClasses(User.class, UserTest.class)
+				.addClasses(User.class, UserTest.class, Code.class)
 				.addAsResource("META-INF/persistence.xml")
 				//.addAsManifestResource(EmptyAsset.INSTANCE,"beans.xml")
 				;

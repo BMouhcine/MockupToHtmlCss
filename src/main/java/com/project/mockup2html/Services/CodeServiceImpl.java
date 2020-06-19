@@ -29,11 +29,7 @@ public class CodeServiceImpl implements CodeService {
 		return codeRepository.findByImageUI(imageUI);
 	}
 
-	@Override
-	public List<Code> findByUser(User user) {
-		// TODO Auto-generated method stub
-		return codeRepository.findByUser(user);
-	}
+
 
 	@Override
 	public List<Code> findAll() {

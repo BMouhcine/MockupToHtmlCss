@@ -13,7 +13,6 @@ import com.project.mockup2html.Models.User;
 public interface CodeService {
 	Code findById(Long id);
 	Code findByImageUI(ImageUI imageUI);
-	List<Code> findByUser(User user);
 	List<Code> findAll();
 	Code save(@Valid Code code);
 

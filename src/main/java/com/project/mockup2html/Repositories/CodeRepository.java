@@ -12,7 +12,6 @@ import com.project.mockup2html.Models.User;
 public interface CodeRepository extends JpaRepository<Code, byte[]>
 {
 	Code findById(Long id);
-	List<Code> findByUser(User user);
 	Code findByImageUI(ImageUI imageUI);
 	List<Code> findAll();
 

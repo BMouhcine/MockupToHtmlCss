@@ -21,7 +21,7 @@ public class ImageUI {
 	@JoinColumn(name="id_user", nullable = false)
 	private User user;
 	
-	@OneToOne(mappedBy = "imageUI")
+	@OneToOne
     private Code code;
 	
 	public ImageUI() {

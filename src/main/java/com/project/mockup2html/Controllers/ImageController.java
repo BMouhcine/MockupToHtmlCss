@@ -77,7 +77,8 @@ public class ImageController {
             JSONObject buff = response.getBody();
             if(response.getStatusCode()==HttpStatus.OK) {
 
-            	Code code = new Code(buff.get("Message").toString(), userBuffer, imageUI);
+            	Code code = new Code(buff.get("Message").toString(), imageUI);
+            	
             	codeRepository.save(code);
 				/*
 				 * File codeFile = new File("code.html"); FileWriter codeWriter = new

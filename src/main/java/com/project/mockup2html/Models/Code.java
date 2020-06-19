@@ -16,11 +16,6 @@ public class Code {
 	private Long id;
 	@Column
 	private String htmlcode;
-	@JsonBackReference
-	@ManyToOne
-	@JoinColumn(name="id_user", nullable = false)
-	private User user;
-	
 	
 	@OneToOne
 	@JoinColumn(name="id_img", nullable = false, referencedColumnName = "id")
@@ -30,10 +25,9 @@ public class Code {
 	public Code() {
 		// TODO Auto-generated constructor stub
 	}
-	public Code(String htmlcode, User user, ImageUI imageUI) {
+	public Code(String htmlcode, ImageUI imageUI) {
 		super();
 		this.imageUI = imageUI;
-		this.user = user;
 		this.htmlcode = htmlcode;
 	}
 	public Long getId_img() {
@@ -57,12 +51,6 @@ public class Code {
 	}
 	public void setHtmlcode(String htmlcode) {
 		this.htmlcode = htmlcode;
-	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
 	}
 	public ImageUI getImageUI() {
 		return imageUI;
