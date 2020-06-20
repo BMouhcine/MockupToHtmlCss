@@ -14,5 +14,6 @@ public interface CodeRepository extends JpaRepository<Code, byte[]>
 	Code findById(Long id);
 	Code findByImageUI(ImageUI imageUI);
 	List<Code> findAll();
+	List<Code> findAllByUserCode(User userCode);
 
 }

@@ -14,6 +14,7 @@ public interface CodeService {
 	Code findById(Long id);
 	Code findByImageUI(ImageUI imageUI);
 	List<Code> findAll();
+	List<Code> findAllByUserCode(User userCode);
 	Code save(@Valid Code code);
 
 }

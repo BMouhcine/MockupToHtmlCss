@@ -42,6 +42,12 @@ public class CodeServiceImpl implements CodeService {
 		// TODO Auto-generated method stub
 		return codeRepository.save(code);
 	}
+
+	@Override
+	public List<Code> findAllByUserCode(User userCode) {
+		// TODO Auto-generated method stub
+		return codeRepository.findAllByUserCode(userCode);
+	}
 	
 	
 	

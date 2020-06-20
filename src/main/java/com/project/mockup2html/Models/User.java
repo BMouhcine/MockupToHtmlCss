@@ -31,7 +31,9 @@ public class User {
 	@OneToMany(mappedBy = "user",fetch=FetchType.EAGER)
 	private Set<ImageUI> imgs;
 	
-	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "userCode",fetch=FetchType.EAGER)
+	private Set<Code> code;
 	
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -83,6 +85,12 @@ public class User {
 	}
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+	public Set<Code> getCode() {
+		return code;
+	}
+	public void setCode(Set<Code> code) {
+		this.code = code;
 	}
 	
 
