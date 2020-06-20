@@ -16,14 +16,11 @@ export class ProjectsComponent implements OnInit {
  
    ngOnInit(): void {
     //the FetchProjetcs Function
-     /* this.projectsservice.FetchProjects(sessionStorage.getItem("id"))
+      this.projectsservice.FetchProjects(sessionStorage.getItem("id"))
            .subscribe(data => {
                 this.Projects = data.total;
-       })*/
+       })
 }
 
-  ngOnInit(): void {
-    
-  }
 
 }
