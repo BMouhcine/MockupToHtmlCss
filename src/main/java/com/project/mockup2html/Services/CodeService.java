@@ -11,7 +11,6 @@ import com.project.mockup2html.Models.User;
 
 @Service
 public interface CodeService {
-	List<Code> findAllByUser(User user);
 	Code findById(Long id);
 	Code findByImageUI(ImageUI imageUI);
 	List<Code> findAll();

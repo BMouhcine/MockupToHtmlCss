@@ -9,18 +9,14 @@ import com.project.mockup2html.Models.Code;
 import com.project.mockup2html.Models.ImageUI;
 import com.project.mockup2html.Models.User;
 import com.project.mockup2html.Repositories.CodeRepository;
-import com.project.mockup2html.Repositories.ImageUIRepository;
+
 
 
 @Repository
 public class CodeServiceImpl implements CodeService {
 	@Autowired
 	CodeRepository codeRepository;
-	@Override
-	public List<Code> findAllByUser(User user) {
-		// TODO Auto-generated method stub
-		return codeRepository.findAllByUser(user);
-	}
+
 
 	@Override
 	public Code findById(Long id) {
@@ -33,7 +29,6 @@ public class CodeServiceImpl implements CodeService {
 		// TODO Auto-generated method stub
 		return codeRepository.findByImageUI(imageUI);
 	}
-
 
 
 	@Override
