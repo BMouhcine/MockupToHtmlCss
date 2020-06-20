@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -17,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -73,7 +75,7 @@ public class ImageController {
             // build the request
             HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
             // send POST request
-            ResponseEntity<JSONObject> response = restTemplate.postForEntity("https://m2c-model.herokuapp.com/post/", requestEntity, JSONObject.class);
+            ResponseEntity<JSONObject> response = restTemplate.postForEntity("http://localhost:5000/post", requestEntity, JSONObject.class);
             JSONObject buff = response.getBody();
             if(response.getStatusCode()==HttpStatus.OK) {
 
@@ -97,7 +99,15 @@ public class ImageController {
 
         return ResponseEntity.ok().body(null);
     }
-
+	@PostMapping(value = "/getAllCodes")
+	public ResponseEntity<List<Code>> getAllCodes(@RequestParam long user_id){
+		if(UserController.currentUserId!=-1) {
+			User userBuffer = userRepository.findById(UserController.currentUserId).get();
+			
+			return ResponseEntity.ok().body(codeRepository.findAllByUser(userBuffer));
+		}
+		return ResponseEntity.ok().body(null);
+	}
 
 
 
