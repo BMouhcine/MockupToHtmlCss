@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ProjectsFetchService } from '../../service/projects-fetch.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,9 +9,18 @@ import { Title } from '@angular/platform-browser';
 })
 export class ProjectsComponent implements OnInit {
   Projects :any 
-  constructor() {
-    
+  constructor(private projectsservice: ProjectsFetchService,private titleService:Title) {
+    this.titleService.setTitle("Projects");
    }
+ 
+ 
+   ngOnInit(): void {
+    //the FetchProjetcs Function
+     /* this.projectsservice.FetchProjects(sessionStorage.getItem("id"))
+           .subscribe(data => {
+                this.Projects = data.total;
+       })*/
+}
 
   ngOnInit(): void {
     
