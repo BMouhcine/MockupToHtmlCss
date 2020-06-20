@@ -16,6 +16,11 @@ import com.project.mockup2html.Repositories.ImageUIRepository;
 public class CodeServiceImpl implements CodeService {
 	@Autowired
 	CodeRepository codeRepository;
+	@Override
+	public List<Code> findAllByUser(User user) {
+		// TODO Auto-generated method stub
+		return codeRepository.findAllByUser(user);
+	}
 
 	@Override
 	public Code findById(Long id) {

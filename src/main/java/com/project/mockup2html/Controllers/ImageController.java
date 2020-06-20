@@ -85,7 +85,7 @@ public class ImageController {
             if(response.getStatusCode()==HttpStatus.OK) {
 
             	Code code = new Code(buff, imageUI, userBuffer);
-            	
+
             	codeRepository.save(code);
 				/*
 				 * File codeFile = new File("code.html"); FileWriter codeWriter = new
@@ -108,12 +108,11 @@ public class ImageController {
 	public ResponseEntity<List<Code>> getAllCodes(@RequestParam long user_id){
 		if(UserController.currentUserId!=-1) {
 			User userBuffer = userRepository.findById(UserController.currentUserId).get();
-			
+
 			return ResponseEntity.ok().body(codeRepository.findAllByUserCode(userBuffer));
 		}
 		return ResponseEntity.ok().body(null);
 	}
-
 
 
 }
