@@ -9,5 +9,5 @@ Professeur encadrant : **[ELHAMLAOUI Mahmoud](https://github.com/ELHAMLAOUI/)**
 - *[OUOKKI Mohamed](https://github.com/Ouokki/)*
 - *[BOUTINZER Mouhcine](https://github.com/BMouhcine/)*
 - *[NIA Achraf](https://github.com/Achrafnia/)*
-- *[MERGHICHI Imane](https://github.com/imerghichi/)* 
+- *[STITOU Nada](https://github.com/nada28/)* 
    
