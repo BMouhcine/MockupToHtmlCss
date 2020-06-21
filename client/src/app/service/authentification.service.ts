@@ -19,7 +19,7 @@ export class AuthenticationService {
 //store JWT token in session
   authenticate(username, password) {
     return this.http
-      .post("/login", { username, password },{observe: 'response'})
+      .post("http://localhost:8080/login", { username, password },{observe: 'response'})
       .pipe(
         map((res:any) => {
           console.log(res)
@@ -50,7 +50,7 @@ export class AuthenticationService {
 //store JWT token in session
 registration(username, email ,password,repassword) {
   return this.http
-    .post("/createUser", { username,email,password,repassword },{observe: 'response',responseType:'json'})
+    .post("http://localhost:8080/createUser", { username,email,password,repassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
         console.log(res)
@@ -60,7 +60,7 @@ registration(username, email ,password,repassword) {
 }
 editProfile(lastpassword,newPassword) {
   return this.http
-    .post("/editUser", {lastpassword,newPassword },{observe: 'response',responseType:'json'})
+    .post("http://localhost:8080/editUser", {lastpassword,newPassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
         console.log(res)
