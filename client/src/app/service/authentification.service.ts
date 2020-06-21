@@ -12,10 +12,10 @@ export class User {
   providedIn: 'root'
 })
 export class AuthenticationService {
-  token : string 
+  token : string
   id : string
   constructor(private http: HttpClient) {}
-// Provide username and password for authentication, and once authentication is successful, 
+// Provide username and password for authentication, and once authentication is successful,
 //store JWT token in session
   authenticate(username, password) {
     return this.http
@@ -46,7 +46,7 @@ export class AuthenticationService {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("id");
   }
-  // Provide username and email and password and repassword for registration, and once authentication is successful, 
+  // Provide username and email and password and repassword for registration, and once authentication is successful,
 //store JWT token in session
 registration(username, email ,password,repassword) {
   return this.http
@@ -71,5 +71,3 @@ editProfile(lastpassword,newPassword) {
 
 
 }
-
-

@@ -21,6 +21,9 @@ import com.project.mockup2html.Models.User;
 import com.project.mockup2html.Repositories.UserRepository;
 import com.project.mockup2html.Services.UserService;
 
+import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+
 
 @RestController
 
@@ -55,9 +58,12 @@ public class UserController {
 	
 	// Update User Handler
 	@PostMapping("/editUser")
-    ResponseEntity editUser(@RequestHeader("newPassword") String newPassword, @RequestHeader("lastpassword") String lastpassword) {
+    ResponseEntity editUser(@RequestBody JSONObject data) {
+		
 		if(currentUserId!=-1) {
 	        
+	        String newPassword = (String) data.get("newPassword");
+	        String lastpassword = (String) data.get("lastpassword");
 	        User userBuffer = userRepository.findById(UserController.currentUserId).get();
 	        log.info("Request to update user: {}", userBuffer.getUsername());
 	        if(new BCryptPasswordEncoder().matches(lastpassword, userBuffer.getPassword())) {
