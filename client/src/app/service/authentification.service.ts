@@ -12,14 +12,14 @@ export class User {
   providedIn: 'root'
 })
 export class AuthenticationService {
-  token : string 
+  token : string
   id : string
   constructor(private http: HttpClient) {}
-// Provide username and password for authentication, and once authentication is successful, 
+// Provide username and password for authentication, and once authentication is successful,
 //store JWT token in session
   authenticate(username, password) {
     return this.http
-      .post<any>("/login", { username, password },{observe: 'response'})
+      .post("/login", { username, password },{observe: 'response'})
       .pipe(
         map((res:any) => {
           console.log(res)
@@ -46,11 +46,11 @@ export class AuthenticationService {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("id");
   }
-  // Provide username and email and password and repassword for registration, and once authentication is successful, 
+  // Provide username and email and password and repassword for registration, and once authentication is successful,
 //store JWT token in session
 registration(username, email ,password,repassword) {
   return this.http
-    .post<any>("/createUser", { username,email,password,repassword },{observe: 'response',responseType:'json'})
+    .post("/createUser", { username,email,password,repassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
         console.log(res)
@@ -58,9 +58,9 @@ registration(username, email ,password,repassword) {
       })
     );
 }
-editProfile(lastUsername, newUsername ,lastpassword,newPassword) {
+editProfile(lastpassword,newPassword) {
   return this.http
-    .post<any>("/editUser", { lastUsername,newUsername,lastpassword,newPassword },{observe: 'response',responseType:'json'})
+    .post("/editUser", {lastpassword,newPassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
         console.log(res)
@@ -71,4 +71,3 @@ editProfile(lastUsername, newUsername ,lastpassword,newPassword) {
 
 
 }
-

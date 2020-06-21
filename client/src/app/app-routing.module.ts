@@ -24,7 +24,7 @@ const routes: Routes = [
     { path: 'login', component: LoginPageComponent },
     { path: 'registration', component: RegistrationPageComponent },
     { path: ':id/acceuil', component: AcceuilComponent,canActivate:[AuthGuardService]},
-    { path: ':id/acceuil/:id/edit', component: ProfileComponent,canActivate:[AuthGuardService]},
+    { path: ':id/edit', component: ProfileComponent,canActivate:[AuthGuardService]},
    
     
 

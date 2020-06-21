@@ -1,8 +1,10 @@
 <div>
   <app-navbar-app></app-navbar-app>
+  <div class="row">
   <div *ngFor="let project of Projects; let i = index">
+    <div class="col-4 ml-2">
     <div class="container mt-4">
-      <p-card header="Project number" subheader="Description" [style]="{width: '260px'}" styleClass="ui-card-shadow">
+      <p-card header="Project {{i+1}}" subheader="Description :" [style]="{width: '260px'}" styleClass="ui-card-shadow">
         <p-header>
             <img src="Card" src="https://www.primefaces.org/primeng/showcase/assets/showcase/images/usercard.png">
         </p-header>
@@ -13,6 +15,8 @@
         </p-footer>
     </p-card>
     </div>
+  </div>
     </div>
+  </div>
    
 </div>

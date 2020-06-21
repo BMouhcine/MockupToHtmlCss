@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.mockup2html.Models.User;
+import com.project.mockup2html.Repositories.UserRepository;
 import com.project.mockup2html.Services.UserService;
+
+import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
 
 
 @RestController
@@ -31,7 +36,8 @@ public class UserController {
     private UserService userDao;
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+	@Autowired
+	UserRepository userRepository;
 	
 	
 	
@@ -52,16 +58,24 @@ public class UserController {
 	
 	// Update User Handler
 	@PostMapping("/editUser")
-    ResponseEntity editUser(@RequestParam String username,@RequestParam String newPwd, @RequestParam String oldPwd) {
-        log.info("Request to update user: {}", username);
-        User userFound = userDao.findByUsername(username);
-        if(new BCryptPasswordEncoder().matches(oldPwd, userFound.getPassword())) {
-        	userFound.setPassword(bCryptPasswordEncoder.encode(newPwd));
-        	userDao.save(userFound);
-        	return ResponseEntity.ok().body("Creds updated successfully.");
-        }else {
-        	return ResponseEntity.ok().body("Old password is wrong.");
-        }
+    ResponseEntity editUser(@RequestBody JSONObject data) {
+		
+		if(currentUserId!=-1) {
+	        
+	        String newPassword = (String) data.get("newPassword");
+	        String lastpassword = (String) data.get("lastpassword");
+	        User userBuffer = userRepository.findById(UserController.currentUserId).get();
+	        log.info("Request to update user: {}", userBuffer.getUsername());
+	        if(new BCryptPasswordEncoder().matches(lastpassword, userBuffer.getPassword())) {
+	        	userBuffer.setPassword(bCryptPasswordEncoder.encode(newPassword));
+	        	userDao.save(userBuffer);
+	        	return ResponseEntity.ok().body(null);
+	        }else {
+	        	return ResponseEntity.ok().body("Old password is wrong.");
+	        }
+	        
+		}return ResponseEntity.ok().body("NOT CONNECTED");
+
     }
 	
 	// USER CREDS CHECKER
