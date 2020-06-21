@@ -109,7 +109,6 @@ public class ImageController {
         if(UserController.currentUserId!=-1) {
             User userBuffer = userRepository.findById(UserController.currentUserId).get();
             List<Code> c = codeRepository.findAllByUserCode(userBuffer);
-            System.out.println(c.get(0).getHtmlcode()+"____________________"+c.get(1).getHtmlcode());
             List<String> list2Return = new ArrayList<String>();
             for(Code e: c) {
                 list2Return.add(e.getHtmlcode());
