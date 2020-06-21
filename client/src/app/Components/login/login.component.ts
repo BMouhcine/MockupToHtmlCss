@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       data => {
         //the help routing is just to test
 
-        this.router.navigate([sessionStorage.getItem("id")+sessionStorage.getItem("token").substring(8,13)+'/acceuil'])
+        this.router.navigate([sessionStorage.getItem("id")+sessionStorage.getItem("token").substring(8,13)+'/projects'])
         this.invalidLogin = false
       },
       error => {
