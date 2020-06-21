@@ -9,12 +9,15 @@
         <li class="nav-item">
             <a class="nav-link" [routerLink]="['/']">{{username}}</a>
         </li>
-        <li class="nav-item" *ngIf="directive">
-          <a class="nav-link" [routerLink]="directive+'/edit'">Edit profile</a>
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="title!='Profile'" [routerLink]="'../../'+directive+'/edit'">Edit profile</a>
       </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/projects']">My Projects</a>
+          <a class="nav-link" *ngIf="title!='Acceuil'" [routerLink]="'../../'+directive+'/acceuil'">Upload an Image</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="title!='Projects'" [routerLink]="'../../'+directive+'/projects'">My projects</a>
+    </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/help']">Help</a>
         </li>
