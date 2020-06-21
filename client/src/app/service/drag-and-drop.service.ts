@@ -23,7 +23,7 @@ export class DragAndDropService {
     console.log(user_id)
 
     return this.http
-    .post<any>('/doUploadImage', formData,{observe: 'response'})
+    .post('http://localhost:8080/doUploadImage', formData,{observe: 'response'})
     .pipe(  
         map((res:any) => {
           console.log(res)

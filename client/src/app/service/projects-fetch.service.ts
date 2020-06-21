@@ -12,7 +12,7 @@ export class ProjectsFetchService {
    
   
   FetchProjects(user_id){
-    return this.http.post('/getAllCodes',{observe: 'response'}).pipe(
+    return this.http.post('http://localhost:8080/getAllCodes',{observe: 'response'}).pipe(
       map((res:any) => {
         console.log(res)
         return res;
