@@ -10,45 +10,14 @@ describe('Login tests', () => {
  
     protractor.browser.get('http://localhost:4200/login');
     it('Should -------------------------', () => {
-    element(by.name('username')).sendKeys('hzg');;
-    element(by.name('password')).sendKeys('hzg');
+    element(by.name('username')).sendKeys('kiki');;
+    element(by.name('password')).sendKeys('kiki');
     element(by.css('#loginForm'));
     element(by.css('#btnSubmit')).click();
     console.log("-------------------------------------");
-    expect(browser.getTitle()).toEqual('Acceuil');
-    //protractor.browser.wait(protractor.until.elementIsVisible(hzg), 5000, 'Error: Element did not display within 5 seconds');
-    //let valLocalStorage = 
-    
-    
-    //console.log(valLocalStorage);
-    //console.log(valLocalStorage);
-   // expect(valLocalStorage).toEqual('hzg');
+    expect(browser.getTitle()).toEqual('Projects');
+   
 });
 
 
-    /*it('Login form should be valid', () => {
-        page.getUsernameTextbox().sendKeys('hzg');
-        page.getPasswordTextbox().sendKeys('hzg');
-
-        let form = page.getForm().getAttribute('class');
-
-        expect(form).toContain('ng-valid');
-    });
-
-    it('Login form should be invalid', () => {
-        page.getUsernameTextbox().sendKeys('');
-        page.getPasswordTextbox().sendKeys('');
-
-        let form = page.getForm().getAttribute('class');
-
-        expect(form).toContain('ng-invalid');
-    });*/
-
-    //it('Should set email value to local storage', () => {
-        
-
-        
-
-       
-    //});
 });
