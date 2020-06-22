@@ -20,7 +20,6 @@ export class NavbarAppComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = document.title
-    console.log(this.title)
     if (this.service.isUserLoggedIn) {
       
       if(sessionStorage.getItem('token') && sessionStorage.getItem('username')){

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ProjectsFetchService } from '../../service/projects-fetch.service';
 import { saveAs } from 'file-saver';
+import { Router } from '@angular/router';
  
  
 @Component({
@@ -11,7 +12,7 @@ import { saveAs } from 'file-saver';
 })
 export class ProjectsComponent implements OnInit {
   Projects :any
-  constructor(private projectsservice: ProjectsFetchService,private titleService:Title) {
+  constructor(private router: Router,private projectsservice: ProjectsFetchService,private titleService:Title) {
     this.titleService.setTitle("Projects");
    }
  
@@ -22,11 +23,10 @@ export class ProjectsComponent implements OnInit {
            .subscribe(data => {
  
                 this.Projects = data;
-                console.log(this.Projects[0]);
+                
        })
 }
 preview(project:any) {
-  console.log(typeof(project));
   let blob = new Blob([project], {type: 'text/html'});
         let url = window.URL.createObjectURL(blob);
         let pwa = window.open(url);
@@ -36,7 +36,6 @@ preview(project:any) {
        
   }
   download(project:any) {
-    console.log(typeof(project));
     let blob = new Blob([project], {type: 'text/html'});
           let url = window.URL.createObjectURL(blob);
           let pwa = window.open(url);
@@ -46,6 +45,14 @@ preview(project:any) {
           saveAs.saveAs(blob, "hello world.html");
          
     }
+
+    delete(index:any) {
+      this.projectsservice.DeleteProject(index)
+           .subscribe(data => {
+                this.ngOnInit();
+       })
+           
+      }
  
  
 }

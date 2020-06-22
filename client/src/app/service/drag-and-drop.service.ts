@@ -26,7 +26,6 @@ export class DragAndDropService {
     .post('/doUploadImage', formData,{observe: 'response'})
     .pipe(
         map((res:any) => {
-          console.log(res)
           return res;
         })
       );

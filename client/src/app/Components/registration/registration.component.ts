@@ -26,7 +26,6 @@ export class RegistrationComponent implements OnInit {
     (this.registrationservice.registration(this.username, this.email,this.password,this.repassword).subscribe(
       data => {
         //the help routing is just to test
-        console.log(data);
         this.router.navigate(['login'])
         this.isRegistred = false
       },

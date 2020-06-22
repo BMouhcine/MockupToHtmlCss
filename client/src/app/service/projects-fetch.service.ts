@@ -14,7 +14,15 @@ export class ProjectsFetchService {
   FetchProjects(user_id){
     return this.http.post('/getAllCodes',{observe: 'response'}).pipe(
       map((res:any) => {
-        console.log(res)
+   
+        return res;
+      })
+    );
+  }
+  DeleteProject(index){
+    return this.http.post('/deleteProject',{index},{observe: 'response'}).pipe(
+      map((res:any) => {
+       
         return res;
       })
     );

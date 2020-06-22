@@ -22,7 +22,6 @@ export class AuthenticationService {
       .post("/login", { username, password },{observe: 'response'})
       .pipe(
         map((res:any) => {
-          console.log(res)
           sessionStorage.setItem('username',username)
           sessionStorage.setItem('password',password)
           this.token = res.headers.get('authorization')
@@ -53,7 +52,6 @@ registration(username, email ,password,repassword) {
     .post("/createUser", { username,email,password,repassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
-        console.log(res)
         return res;
       })
     );
@@ -63,7 +61,7 @@ editProfile(lastpassword,newPassword) {
     .post("/editUser", {lastpassword,newPassword },{observe: 'response',responseType:'json'})
     .pipe(
       map((res:any) => {
-        console.log(res)
+      
         return res;
       })
     );
