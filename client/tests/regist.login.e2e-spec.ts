@@ -22,7 +22,7 @@ describe('Login tests', () => {
     element(by.css('#loginForm'));
     element(by.css('#btnSubmit')).click();
     console.log("-------------------------------------");
-    expect(browser.getTitle()).toEqual('Acceuil');
+    expect(browser.getTitle()).toEqual('Projects');
    
    
 });
