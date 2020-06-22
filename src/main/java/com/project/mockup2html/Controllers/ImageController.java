@@ -82,7 +82,7 @@ public class ImageController {
             HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
             // send POST request
 
-            ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:56733/post/", requestEntity, String.class);
+            ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:5000/post/", requestEntity, String.class);
             String buff = response.getBody();
             if(response.getStatusCode()==HttpStatus.OK) {
 
@@ -122,22 +122,6 @@ public class ImageController {
         return ResponseEntity.ok().body(null);
     }
 
-    @PostMapping(value = "/resultedCode")
-    public ResponseEntity<String> getResultedCode(@RequestBody JSONObject data){
-    	if(UserController.currentUserId!=-1) {
-
-    		long id_img = Long.parseLong(data.getAsString("id_img"));
-	        String htmlCode = data.getAsString("htmlCode");
-        	ImageUI imageBuffer = imageUIRepository.findById(id_img);
-        	User userBuffer = userRepository.findById(UserController.currentUserId).get();
-        	Code code = new Code(htmlCode, imageBuffer, userBuffer);
-            codeRepository.save(code);
-            return ResponseEntity.ok().body(null);
-    	}else {
-    		return ResponseEntity.badRequest().body(null);
-    	}
-
-    }
 
 
 }
