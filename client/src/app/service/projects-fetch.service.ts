@@ -7,10 +7,10 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class ProjectsFetchService {
-  
+
   constructor(private http: HttpClient) {}
-   
-  
+
+
   FetchProjects(user_id){
     return this.http.post('/getAllCodes',{observe: 'response'}).pipe(
       map((res:any) => {
@@ -20,5 +20,5 @@ export class ProjectsFetchService {
     );
   }
 
-  
+
 }
