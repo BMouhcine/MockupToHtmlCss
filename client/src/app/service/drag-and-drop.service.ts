@@ -1,4 +1,4 @@
-  
+
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { map } from "rxjs/operators";
@@ -14,7 +14,7 @@ export class DragAndDropService {
 
 
   }
-       
+
   addFiles(images: any) {
     var user_id =sessionStorage.getItem("id")
     var formData = new FormData();
@@ -24,13 +24,13 @@ export class DragAndDropService {
 
     return this.http
     .post('/doUploadImage', formData,{observe: 'response'})
-    .pipe(  
+    .pipe(
         map((res:any) => {
           console.log(res)
           return res;
         })
       );
-    
+
   }
 
   errorMgmt(error: HttpErrorResponse) {
